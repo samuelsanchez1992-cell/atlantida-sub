@@ -45,6 +45,9 @@
             </nav>
 
             <div class="header-actions">
+                <a href="https://www.instagram.com/atlantida_sub/" target="_blank" rel="noopener noreferrer" class="instagram-header-link" aria-label="Instagram">
+                    <i data-lucide="instagram"></i>
+                </a>
                 <a href="#pricing" class="btn btn-primary btn-sm btn-pulse" id="btn-header-join">Hazte Socio</a>
                 <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú de navegación">
                     <i data-lucide="menu" id="menu-icon"></i>
@@ -52,29 +55,99 @@
             </div>
         </div>
     </header>
-
+ 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="hero-bg-overlay"></div>
         <div class="container hero-container">
-            <div class="hero-content reveal">
-                <span class="badge">
-                    <i data-lucide="heart" class="badge-icon"></i>
-                    Club Sin Ánimo de Lucro
-                </span>
-                <span class="badge badge-orange">
-                    <i data-lucide="compass" class="badge-icon"></i>
-                    Decano en Canarias
-                </span>
-                <h1 class="hero-title" id="hero-title">
-                    Comparte tu pasión<br>bajo el azul del <span class="text-gradient-orange">Atlántico</span>
-                </h1>
-                <p class="hero-subtitle" id="hero-description">
-                    Somos una comunidad de apasionados del mar en Tenerife. Compartimos inmersiones, organizamos salidas semanales, facilitamos equipo a precio de coste y promovemos el buceo entre nuestros socios.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#pricing" class="btn btn-primary btn-lg" id="btn-hero-cta">Únete al Club 🤿</a>
-                    <a href="#about" class="btn btn-secondary btn-lg" id="btn-hero-more">Saber Más <i data-lucide="arrow-down" class="btn-icon"></i></a>
+            <div class="hero-grid">
+                <div class="hero-content reveal">
+                    <span class="badge badge-accent">
+                        <i data-lucide="shield" class="badge-icon"></i>
+                        Club Sin Ánimo de Lucro
+                    </span>
+                    <span class="badge badge-orange">
+                        <i data-lucide="compass" class="badge-icon"></i>
+                        Decano en Canarias
+                    </span>
+                    <h1 class="hero-title" id="hero-title">
+                        Comparte tu pasión<br>bajo el azul del <span class="text-gradient-orange">Atlántico</span>
+                    </h1>
+                    <p class="hero-subtitle" id="hero-description">
+                        Somos una comunidad de apasionados del mar en Tenerife. Compartimos inmersiones, organizamos salidas semanales, facilitamos equipo y promovemos el buceo entre nuestros socios permitiendo acceder al buceo de una forma muy económica
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#pricing" class="btn btn-primary btn-lg" id="btn-hero-cta">Únete al Club 🤿</a>
+                        <a href="#about" class="btn btn-secondary btn-lg" id="btn-hero-more">Saber Más <i data-lucide="arrow-down" class="btn-icon"></i></a>
+                    </div>
+                </div>
+ 
+                <!-- Interactive Floating Nodes Chart -->
+                <div class="hero-chart reveal">
+                    <div class="chart-container">
+                        <!-- Connecting lines wrapper (SVG) -->
+                        <svg class="chart-connections" viewBox="0 0 500 500">
+                            <line class="connection-line line-1" x1="250" y1="250" x2="250" y2="60" />
+                            <line class="connection-line line-2" x1="250" y1="250" x2="410" y2="135" />
+                            <line class="connection-line line-3" x1="250" y1="250" x2="430" y2="295" />
+                            <line class="connection-line line-4" x1="250" y1="250" x2="360" y2="430" />
+                            <line class="connection-line line-5" x1="250" y1="250" x2="140" y2="430" />
+                            <line class="connection-line line-6" x1="250" y1="250" x2="70" y2="295" />
+                            <line class="connection-line line-7" x1="250" y1="250" x2="90" y2="135" />
+                        </svg>
+ 
+                        <!-- Central Node -->
+                        <div class="chart-center glass-panel">
+                            <div class="center-content">
+                                <img src="assets/logo.png" alt="Atlántida Sub" class="center-logo">
+                                <span class="center-text">Atlántida Sub</span>
+                                <span class="center-subtext">Club de Buceo</span>
+                            </div>
+                        </div>
+ 
+                        <!-- Floating Nodes (7 nodes) -->
+                        <div class="chart-node node-1 glass-panel" data-index="1">
+                            <i data-lucide="shield" class="node-icon"></i>
+                            <span class="node-text">Entidad Deportiva</span>
+                            <p class="node-desc">Entidad sin ánimo de lucro registrada, enfocada en la divulgación y práctica recreativa de actividades subacuáticas.</p>
+                        </div>
+ 
+                        <div class="chart-node node-2 glass-panel" data-index="2">
+                            <i data-lucide="users" class="node-icon"></i>
+                            <span class="node-text">Gobernanza Local</span>
+                            <p class="node-desc">Estructura plenamente autogestionada y regida de manera democrática y cooperativa por los propios socios.</p>
+                        </div>
+ 
+                        <div class="chart-node node-3 glass-panel" data-index="3">
+                            <i data-lucide="compass" class="node-icon"></i>
+                            <span class="node-text">Buceo Seguro</span>
+                            <p class="node-desc">Fomento estricto del protocolo de buceo, formación continua de instructores y respeto a la reserva marina.</p>
+                        </div>
+ 
+                        <div class="chart-node node-4 glass-panel" data-index="4">
+                            <i data-lucide="anchor" class="node-icon"></i>
+                            <span class="node-text">Logística de Salidas</span>
+                            <p class="node-desc">Organización regular de inmersiones en las vertientes norte, sur y pecios históricos de Tenerife.</p>
+                        </div>
+ 
+                        <div class="chart-node node-5 glass-panel" data-index="5">
+                            <i data-lucide="briefcase" class="node-icon"></i>
+                            <span class="node-text">Gestión de Equipos</span>
+                            <p class="node-desc">Alquiler y facilitación de reguladores, ordenadores y material de buceo a precio estricto de mantenimiento.</p>
+                        </div>
+ 
+                        <div class="chart-node node-6 glass-panel" data-index="6">
+                            <i data-lucide="piggy-bank" class="node-icon"></i>
+                            <span class="node-text">Fomento Económico</span>
+                            <p class="node-desc">Bajo costo operativo que democratiza el buceo permitiendo salidas a precios sin margen comercial.</p>
+                        </div>
+ 
+                        <div class="chart-node node-7 glass-panel" data-index="7">
+                            <i data-lucide="cylinder" class="node-icon"></i>
+                            <span class="node-text">Carga Propia</span>
+                            <p class="node-desc">Estación de llenado autónoma en el local del club con suministro de Aire respirable y mezclas de Nitrox.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="hero-scroll-indicator reveal">

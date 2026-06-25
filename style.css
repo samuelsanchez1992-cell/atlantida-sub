@@ -391,6 +391,32 @@ img {
     gap: 16px;
 }
 
+.instagram-header-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-secondary);
+    transition: var(--transition-smooth);
+}
+
+.instagram-header-link i {
+    width: 18px;
+    height: 18px;
+}
+
+.instagram-header-link:hover {
+    color: #e1306c;
+    border-color: rgba(225, 48, 108, 0.35);
+    background: rgba(225, 48, 108, 0.08);
+    box-shadow: 0 0 15px rgba(225, 48, 108, 0.25);
+    transform: translateY(-2px);
+}
+
 .mobile-toggle {
     display: none;
     background: none;
@@ -473,6 +499,13 @@ img {
     margin-left: 8px;
 }
 
+.badge-accent {
+    background: rgba(56, 189, 248, 0.15) !important;
+    border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+    color: #f0f9ff !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
 .badge-icon {
     width: 14px;
     height: 14px;
@@ -497,6 +530,268 @@ img {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+/* Hero Layout Grid */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 100%;
+    margin-top: 40px;
+}
+
+/* Interactive Nodes Chart */
+.hero-chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.chart-container {
+    position: relative;
+    width: 440px;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Connecting SVG lines */
+.chart-connections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.connection-line {
+    stroke: rgba(255, 255, 255, 0.06); /* Extremely subtle line for serious look */
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+    transition: var(--transition-smooth);
+}
+
+/* Highlight connecting lines on node hover using :has() */
+.chart-container:has(.node-1:hover) .line-1 { stroke: var(--color-orange); stroke-width: 2.5; stroke-dasharray: none; filter: drop-shadow(0 0 8px var(--color-orange)); }
+.chart-container:has(.node-2:hover) .line-2 { stroke: var(--color-blue-light); stroke-width: 2.5; stroke-dasharray: none; filter: drop-shadow(0 0 8px var(--color-blue-light)); }
+.chart-container:has(.node-3:hover) .line-3 { stroke: var(--color-orange); stroke-width: 2.5; stroke-dasharray: none; filter: drop-shadow(0 0 8px var(--color-orange)); }
+.chart-container:has(.node-4:hover) .line-4 { stroke: var(--color-blue-light); stroke-width: 2.5; stroke-dasharray: none; filter: drop-shadow(0 0 8px var(--color-blue-light)); }
+.chart-container:has(.node-5:hover) .line-5 { stroke: var(--color-orange); stroke-width: 2.5; stroke-dasharray: none; filter: drop-shadow(0 0 8px var(--color-orange)); }
+.chart-container:has(.node-6:hover) .line-6 { stroke: var(--color-blue-light); stroke-width: 2.5; stroke-dasharray: none; filter: drop-shadow(0 0 8px var(--color-blue-light)); }
+.chart-container:has(.node-7:hover) .line-7 { stroke: var(--color-orange); stroke-width: 2.5; stroke-dasharray: none; filter: drop-shadow(0 0 8px var(--color-orange)); }
+
+/* Central Node */
+.chart-center {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 25px rgba(12, 92, 166, 0.2);
+    background: rgba(6, 14, 29, 0.95);
+    animation: pulseCenter 6s infinite ease-in-out;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.center-logo {
+    width: 44px;
+    height: auto;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.3));
+}
+
+.center-text {
+    font-family: var(--font-title);
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: var(--color-white);
+    line-height: 1.1;
+    letter-spacing: -0.2px;
+}
+
+.center-subtext {
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-orange);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+@keyframes pulseCenter {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 25px rgba(12, 92, 166, 0.2);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 35px rgba(12, 92, 166, 0.35);
+        border-color: rgba(242, 122, 24, 0.4);
+    }
+}
+
+/* Professional Floating Nodes */
+.chart-node {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    background: rgba(11, 23, 45, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                height 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                background-color 0.3s ease, 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Individual node positioning using centers */
+.node-1 { top: 55px; left: 220px; border-color: rgba(242, 122, 24, 0.2); animation: float1 10s infinite ease-in-out; }
+.node-2 { top: 120px; left: 360px; border-color: rgba(56, 189, 248, 0.2); animation: float2 9s infinite ease-in-out; }
+.node-3 { top: 260px; left: 385px; border-color: rgba(242, 122, 24, 0.2); animation: float3 11s infinite ease-in-out; }
+.node-4 { top: 380px; left: 320px; border-color: rgba(56, 189, 248, 0.2); animation: float4 9.5s infinite ease-in-out; }
+.node-5 { top: 380px; left: 120px; border-color: rgba(242, 122, 24, 0.2); animation: float5 10.5s infinite ease-in-out; }
+.node-6 { top: 260px; left: 55px; border-color: rgba(56, 189, 248, 0.2); animation: float6 9.8s infinite ease-in-out; }
+.node-7 { top: 120px; left: 80px; border-color: rgba(242, 122, 24, 0.2); animation: float7 10.2s infinite ease-in-out; }
+
+/* Node Icon styling */
+.chart-node .node-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--color-blue-light);
+    margin-bottom: 4px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.node-1 .node-icon, .node-3 .node-icon, .node-5 .node-icon, .node-7 .node-icon {
+    color: var(--color-orange);
+}
+
+.chart-node .node-text {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    line-height: 1.1;
+    font-family: var(--font-title);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+/* Complex detailed description (hidden by default) */
+.node-desc {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+    margin: 0;
+    padding: 0 4px;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease;
+}
+
+/* Expansion Hover State */
+.chart-node:hover {
+    width: 180px;
+    height: 180px;
+    background: rgba(6, 14, 29, 0.98);
+    z-index: 10;
+    animation-play-state: paused !important;
+}
+
+.node-1:hover, .node-3:hover, .node-5:hover, .node-7:hover {
+    border-color: var(--color-orange);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(242, 122, 24, 0.3);
+}
+
+.node-2:hover, .node-4:hover, .node-6:hover {
+    border-color: var(--color-blue-light);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+.chart-node:hover .node-icon {
+    transform: translateY(-4px) scale(0.9);
+    color: var(--color-white) !important;
+}
+
+.chart-node:hover .node-text {
+    color: var(--color-white);
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+}
+
+.chart-node:hover .node-desc {
+    opacity: 1;
+    max-height: 100px;
+    margin-top: 8px;
+    pointer-events: auto;
+}
+
+/* Extremely slow professional orbit float animations */
+@keyframes float1 {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0) translateX(0); }
+    50% { transform: translate(-50%, -50%) translateY(-4px) translateX(2px); }
+}
+@keyframes float2 {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0) translateX(0); }
+    50% { transform: translate(-50%, -50%) translateY(-3px) translateX(-2px); }
+}
+@keyframes float3 {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0) translateX(0); }
+    50% { transform: translate(-50%, -50%) translateY(4px) translateX(-1px); }
+}
+@keyframes float4 {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0) translateX(0); }
+    50% { transform: translate(-50%, -50%) translateY(3px) translateX(3px); }
+}
+@keyframes float5 {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0) translateX(0); }
+    50% { transform: translate(-50%, -50%) translateY(-4px) translateX(2px); }
+}
+@keyframes float6 {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0) translateX(0); }
+    50% { transform: translate(-50%, -50%) translateY(3px) translateX(-3px); }
+}
+@keyframes float7 {
+    0%, 100% { transform: translate(-50%, -50%) translateY(0) translateX(0); }
+    50% { transform: translate(-50%, -50%) translateY(-3px) translateX(-2px); }
 }
 
 /* Mouse Scroll Indicator */
@@ -1720,6 +2015,20 @@ img {
    Responsive / Mobile Styles
    ========================================================================== */
 @media (max-width: 1024px) {
+    .hero-section {
+        padding: calc(var(--header-height) + 40px) 0 80px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .hero-chart {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
     .hero-title {
         font-size: 3.2rem;
     }
@@ -1838,6 +2147,21 @@ img {
 @media (max-width: 480px) {
     .hero-title {
         font-size: 2.1rem;
+    }
+
+    .hero-chart {
+        transform: scale(0.72);
+        transform-origin: center center;
+        margin-top: -30px;
+        margin-bottom: -30px;
+    }
+
+    @media (max-width: 380px) {
+        .hero-chart {
+            transform: scale(0.58);
+            margin-top: -55px;
+            margin-bottom: -55px;
+        }
     }
     
     .hero-buttons {
