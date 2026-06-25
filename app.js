@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
     });
 
     revealElements.forEach(element => {
@@ -112,17 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = canvas.height + Math.random() * 100;
-                this.size = Math.random() * 4 + 1; // Size 1px to 5px
-                this.speedY = Math.random() * 0.8 + 0.2; // Speed up
-                this.speedX = Math.random() * 0.5 - 0.25; // Slight drift
-                this.opacity = Math.random() * 0.4 + 0.1; // Subtly transparent
+                this.size = Math.random() * 3 + 1; // Size 1px to 4px
+                this.speedY = Math.random() * 0.6 + 0.15; // Moderate speed up
+                this.speedX = Math.random() * 0.4 - 0.2; // Slight drift
+                this.opacity = Math.random() * 0.35 + 0.05; // Subtly transparent
                 this.wobble = Math.random() * 0.02;
-                this.wobbleSpeed = Math.random() * 0.02 + 0.01;
             }
 
             update() {
                 this.y -= this.speedY;
-                this.x += this.speedX + Math.sin(this.y * this.wobble) * 0.2;
+                this.x += this.speedX + Math.sin(this.y * this.wobble) * 0.15;
                 
                 // If bubble goes off top, reset to bottom
                 if (this.y < -10) {
@@ -133,7 +132,8 @@ document.addEventListener('DOMContentLoaded', () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 245, 212, ${this.opacity})`;
+                // Draw in corporate blue/glow tone: rgba(56, 189, 248, opacity)
+                ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
                 ctx.fill();
             }
         }
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize bubbles (density based on screen width)
         const initBubbles = () => {
             bubblesArray = [];
-            const numberOfBubbles = Math.floor((canvas.width * canvas.height) / 15000);
+            const numberOfBubbles = Math.floor((canvas.width * canvas.height) / 20000);
             for (let i = 0; i < numberOfBubbles; i++) {
                 bubblesArray.push(new Bubble());
             }
@@ -161,7 +161,39 @@ document.addEventListener('DOMContentLoaded', () => {
         animateBubbles();
     }
 
-    // 7. Contact Form Handling (Interactive Mockup)
+    // 7. Interactive Map of Tenerife Spots logic
+    const mapPins = document.querySelectorAll('.map-pin');
+    const placeholder = document.getElementById('map-placeholder');
+    const detailContainers = document.querySelectorAll('.map-details');
+
+    if (mapPins.length > 0) {
+        mapPins.forEach(pin => {
+            pin.addEventListener('click', () => {
+                const spot = pin.getAttribute('data-spot');
+                
+                // 1. Remove active class from all pins
+                mapPins.forEach(p => p.classList.remove('active'));
+                
+                // 2. Add active class to clicked pin
+                pin.classList.add('active');
+                
+                // 3. Hide placeholder text
+                if (placeholder) {
+                    placeholder.style.display = 'none';
+                }
+                
+                // 4. Hide all spot detail blocks and show the target one
+                detailContainers.forEach(detail => {
+                    detail.classList.remove('active');
+                    if (detail.getAttribute('id') === `spot-${spot}`) {
+                        detail.classList.add('active');
+                    }
+                });
+            });
+        });
+    }
+
+    // 8. Contact Form Handling (Interactive Mockup)
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
     const btnSubmit = document.getElementById('btn-submit-form');
@@ -185,15 +217,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Visual sending state
             btnSubmit.disabled = true;
-            btnSubmit.innerHTML = `Enviando... <i data-lucide="loader-2" class="btn-icon animate-spin"></i>`;
+            btnSubmit.innerHTML = `Enviando al Club... <i data-lucide="loader-2" class="btn-icon animate-spin"></i>`;
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
 
-            // Simulate Network delay (1.5 seconds)
+            // Simulate Network delay (1.2 seconds)
             setTimeout(() => {
                 // Success message
-                formStatus.innerHTML = `<strong>¡Mensaje enviado con éxito!</strong><br>Gracias por contactar con nosotros, ${name}. Nos pondremos en contacto contigo en breve para resolver tus dudas sobre el club. 🌊🐢`;
+                formStatus.innerHTML = `<strong>¡Mensaje enviado con éxito!</strong><br>Gracias por contactar con Atlántida Sub, ${name}. Nos pondremos en contacto contigo por correo electrónico en breve para resolver tu solicitud sobre el club. 🌊🍊`;
                 formStatus.className = 'form-status-message success';
                 
                 // Reset form fields
@@ -201,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Reset button state
                 btnSubmit.disabled = false;
-                btnSubmit.innerHTML = `Enviar Mensaje <i data-lucide="send" class="btn-icon"></i>`;
+                btnSubmit.innerHTML = `Enviar Consulta al Club <i data-lucide="send" class="btn-icon"></i>`;
                 if (typeof lucide !== 'undefined') {
                     lucide.createIcons();
                 }
@@ -219,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 1000);
                 }, 8000);
 
-            }, 1500);
+            }, 1200);
         });
     }
 });
