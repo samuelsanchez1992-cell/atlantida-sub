@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlántida Sub | Club de Buceo Sin Ánimo de Lucro en Tenerife</title>
+    <title>Atlántida Sub | Más que buceo, tu comunidad submarina en Tenerife</title>
     <meta name="description" content="Atlántida Sub es un club de buceo sin ánimo de lucro en Tenerife. Promovemos el buceo entre nuestros socios con salidas semanales, alquiler de material y DPV, cargas de aire/Nitrox y formación de instructores del club.">
     
     <!-- Google Fonts -->
@@ -34,19 +34,21 @@
             </a>
             
             <nav class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active" id="link-home">Inicio</a>
-                <a href="#about" class="nav-link" id="link-about">Nosotros</a>
-                <a href="#activities" class="nav-link" id="link-activities">Actividades</a>
+                <a href="#about" class="nav-link" id="link-about">Familia Atlántida</a>
+                <a href="#activities" class="nav-link" id="link-activities">Actividades y Formación</a>
                 <a href="#services" class="nav-link" id="link-services">Servicios</a>
-                <a href="#training" class="nav-link" id="link-training">Formación</a>
-                <a href="#pricing" class="nav-link" id="link-pricing">Hazte Socio</a>
-                <a href="#inmersiones" class="nav-link" id="link-inmersiones">Mapa</a>
+                <a href="#inmersiones" class="nav-link" id="link-inmersiones">Mapa de Inmersiones</a>
+                <a href="#pricing" class="nav-link" id="link-pricing">Únete</a>
                 <a href="#contact" class="nav-link" id="link-contact">Contacto</a>
             </nav>
 
             <div class="header-actions">
                 <a href="https://www.instagram.com/atlantida_sub/" target="_blank" rel="noopener noreferrer" class="instagram-header-link" aria-label="Instagram">
-                    <i data-lucide="instagram"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                    </svg>
                 </a>
                 <a href="#pricing" class="btn btn-primary btn-sm btn-pulse" id="btn-header-join">Hazte Socio</a>
                 <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú de navegación">
@@ -59,204 +61,312 @@
     <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="hero-bg-overlay"></div>
-        <div class="container hero-container">
-            <div class="hero-grid">
-                <div class="hero-content reveal">
-                    <span class="badge badge-accent">
-                        <i data-lucide="shield" class="badge-icon"></i>
-                        Club Sin Ánimo de Lucro
-                    </span>
-                    <span class="badge badge-orange">
-                        <i data-lucide="compass" class="badge-icon"></i>
-                        Decano en Canarias
-                    </span>
-                    <h1 class="hero-title" id="hero-title">
-                        Comparte tu pasión<br>bajo el azul del <span class="text-gradient-orange">Atlántico</span>
-                    </h1>
-                    <p class="hero-subtitle" id="hero-description">
-                        Somos una comunidad de apasionados del mar en Tenerife. Compartimos inmersiones, organizamos salidas semanales, facilitamos equipo y promovemos el buceo entre nuestros socios permitiendo acceder al buceo de una forma muy económica
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#pricing" class="btn btn-primary btn-lg" id="btn-hero-cta">Únete al Club 🤿</a>
-                        <a href="#about" class="btn btn-secondary btn-lg" id="btn-hero-more">Saber Más <i data-lucide="arrow-down" class="btn-icon"></i></a>
+        <div class="container hero-container centered-hero">
+            <div class="hero-content reveal text-center">
+                <h1 class="hero-title" id="hero-title">
+                    Más que buceo,<br>tu comunidad submarina en <span class="text-gradient-orange">Tenerife</span>
+                </h1>
+            </div>
+
+            <!-- Interactive Floating Nodes Chart (Primary Focus) -->
+            <div class="hero-chart reveal">
+                <div class="chart-container">
+                    <!-- Connecting lines wrapper (SVG matched to 480x480 container) -->
+                    <svg class="chart-connections" viewBox="0 0 480 480">
+                        <line class="connection-line line-1" x1="240" y1="240" x2="240" y2="70" />
+                        <line class="connection-line line-2" x1="240" y1="240" x2="387" y2="155" />
+                        <line class="connection-line line-3" x1="240" y1="240" x2="387" y2="325" />
+                        <line class="connection-line line-4" x1="240" y1="240" x2="240" y2="410" />
+                        <line class="connection-line line-5" x1="240" y1="240" x2="93" y2="325" />
+                        <line class="connection-line line-6" x1="240" y1="240" x2="93" y2="155" />
+                    </svg>
+
+                    <!-- Central Node -->
+                    <div class="chart-center glass-panel">
+                        <div class="center-content">
+                            <img src="assets/logo.png" alt="Atlántida Sub" class="center-logo">
+                            <span class="center-text">Atlántida Sub</span>
+                            <span class="center-subtext">Club de Buceo</span>
+                        </div>
                     </div>
-                </div>
- 
-                <!-- Interactive Floating Nodes Chart -->
-                <div class="hero-chart reveal">
-                    <div class="chart-container">
-                        <!-- Connecting lines wrapper (SVG) -->
-                        <svg class="chart-connections" viewBox="0 0 500 500">
-                            <line class="connection-line line-1" x1="250" y1="250" x2="250" y2="60" />
-                            <line class="connection-line line-2" x1="250" y1="250" x2="410" y2="135" />
-                            <line class="connection-line line-3" x1="250" y1="250" x2="430" y2="295" />
-                            <line class="connection-line line-4" x1="250" y1="250" x2="360" y2="430" />
-                            <line class="connection-line line-5" x1="250" y1="250" x2="140" y2="430" />
-                            <line class="connection-line line-6" x1="250" y1="250" x2="70" y2="295" />
-                            <line class="connection-line line-7" x1="250" y1="250" x2="90" y2="135" />
+
+                    <!-- Floating Nodes (6 nodes as links) -->
+                    <a href="#about" class="chart-node node-1 glass-panel" data-index="1">
+                        <i data-lucide="waves" class="node-icon"></i>
+                        <span class="node-text">Familia<br>Atlántida</span>
+                        <p class="node-desc">Conoce nuestra familia submarina y filosofía deportiva sin ánimo de lucro.</p>
+                    </a>
+
+                    <a href="#services" class="chart-node node-2 glass-panel" data-index="2">
+                        <!-- Scuba tank icon — bold outline style matching reference image -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="node-icon node-icon-tall">
+
+                            <!-- Bottom dome -->
+                            <path d="M10 56 Q20 63 30 56"/>
+
+                            <!-- Main cylinder body -->
+                            <line x1="10" y1="56" x2="10" y2="18"/>
+                            <line x1="30" y1="56" x2="30" y2="18"/>
+
+                            <!-- Top dome / shoulder -->
+                            <path d="M10 18 Q20 10 30 18"/>
+
+                            <!-- Neck -->
+                            <rect x="15" y="7" width="10" height="11" rx="2.5"/>
+
+                            <!-- Valve T-bar -->
+                            <line x1="8" y1="8" x2="32" y2="8" stroke-width="3.5"/>
+                            <!-- Valve post center -->
+                            <line x1="20" y1="4" x2="20" y2="8"/>
+                            <!-- Small valve wheel -->
+                            <circle cx="20" cy="4" r="3" stroke-width="2"/>
+
+                            <!-- Pressure band 1 (top) -->
+                            <rect x="10" y="23" width="20" height="4" rx="1" fill="currentColor" fill-opacity="0.25" stroke-width="1.5"/>
+
+                            <!-- Pressure band 2 (bottom) -->
+                            <rect x="10" y="44" width="20" height="4" rx="1" fill="currentColor" fill-opacity="0.25" stroke-width="1.5"/>
+
+                            <!-- Regulator hose (right side) -->
+                            <path d="M30 22 Q38 22 38 30 Q38 38 32 40" stroke-width="2.5"/>
+                            <!-- Regulator head -->
+                            <circle cx="31" cy="41" r="4" stroke-width="2.5"/>
+
                         </svg>
- 
-                        <!-- Central Node -->
-                        <div class="chart-center glass-panel">
-                            <div class="center-content">
-                                <img src="assets/logo.png" alt="Atlántida Sub" class="center-logo">
-                                <span class="center-text">Atlántida Sub</span>
-                                <span class="center-subtext">Club de Buceo</span>
-                            </div>
-                        </div>
- 
-                        <!-- Floating Nodes (7 nodes) -->
-                        <div class="chart-node node-1 glass-panel" data-index="1">
-                            <i data-lucide="shield" class="node-icon"></i>
-                            <span class="node-text">Entidad Deportiva</span>
-                            <p class="node-desc">Entidad sin ánimo de lucro registrada, enfocada en la divulgación y práctica recreativa de actividades subacuáticas.</p>
-                        </div>
- 
-                        <div class="chart-node node-2 glass-panel" data-index="2">
-                            <i data-lucide="users" class="node-icon"></i>
-                            <span class="node-text">Gobernanza Local</span>
-                            <p class="node-desc">Estructura plenamente autogestionada y regida de manera democrática y cooperativa por los propios socios.</p>
-                        </div>
- 
-                        <div class="chart-node node-3 glass-panel" data-index="3">
-                            <i data-lucide="compass" class="node-icon"></i>
-                            <span class="node-text">Buceo Seguro</span>
-                            <p class="node-desc">Fomento estricto del protocolo de buceo, formación continua de instructores y respeto a la reserva marina.</p>
-                        </div>
- 
-                        <div class="chart-node node-4 glass-panel" data-index="4">
-                            <i data-lucide="anchor" class="node-icon"></i>
-                            <span class="node-text">Logística de Salidas</span>
-                            <p class="node-desc">Organización regular de inmersiones en las vertientes norte, sur y pecios históricos de Tenerife.</p>
-                        </div>
- 
-                        <div class="chart-node node-5 glass-panel" data-index="5">
-                            <i data-lucide="briefcase" class="node-icon"></i>
-                            <span class="node-text">Gestión de Equipos</span>
-                            <p class="node-desc">Alquiler y facilitación de reguladores, ordenadores y material de buceo a precio estricto de mantenimiento.</p>
-                        </div>
- 
-                        <div class="chart-node node-6 glass-panel" data-index="6">
-                            <i data-lucide="piggy-bank" class="node-icon"></i>
-                            <span class="node-text">Fomento Económico</span>
-                            <p class="node-desc">Bajo costo operativo que democratiza el buceo permitiendo salidas a precios sin margen comercial.</p>
-                        </div>
- 
-                        <div class="chart-node node-7 glass-panel" data-index="7">
-                            <i data-lucide="cylinder" class="node-icon"></i>
-                            <span class="node-text">Carga Propia</span>
-                            <p class="node-desc">Estación de llenado autónoma en el local del club con suministro de Aire respirable y mezclas de Nitrox.</p>
-                        </div>
-                    </div>
+                        <span class="node-text">Servicios</span>
+                        <p class="node-desc">Estación de carga Aire/Nitrox, alquiler de scooters DPV y alquiler de equipos.</p>
+                    </a>
+
+                    <a href="#activities" class="chart-node node-3 glass-panel" data-index="3">
+                        <i data-lucide="life-buoy" class="node-icon"></i>
+                        <span class="node-text">Actividades y Formación</span>
+                        <p class="node-desc">Explora las actividades que realizamos y la formación a la que tenemos acceso.</p>
+                    </a>
+
+                    <a href="#inmersiones" class="chart-node node-4 glass-panel" data-index="4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="node-icon">
+                            <!-- Folded Map Outline -->
+                            <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z" />
+                            <!-- Map grid/coordinate wave lines -->
+                            <path d="M9 3v15M15 6v15" stroke-dasharray="2 2" opacity="0.6" />
+                            <!-- Tiny Dive Flag pin indicating an immersion spot -->
+                            <path d="M11 8h4.5l-1.5 3h-3z" fill="currentColor" opacity="0.9" />
+                            <line x1="11" y1="8" x2="11" y2="14" />
+                        </svg>
+                        <span class="node-text">Mapa de Inmersiones</span>
+                        <p class="node-desc">Explora el mapa de inmersiones de la isla.</p>
+                    </a>
+
+                    <a href="#pricing" class="chart-node node-5 glass-panel" data-index="5">
+                        <!-- Happy diver icon — bold outline style -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 72" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="node-icon node-icon-tall">
+
+                            <!-- Head with dive mask -->
+                            <circle cx="26" cy="9" r="7"/>
+                            <!-- Mask strap across face -->
+                            <rect x="19" y="6" width="14" height="6" rx="2" fill="currentColor" fill-opacity="0.2" stroke-width="2"/>
+                            <!-- Mask lens shine -->
+                            <line x1="21" y1="7" x2="23" y2="9" stroke-width="1.5" opacity="0.7"/>
+
+                            <!-- Wetsuit body / torso -->
+                            <path d="M20 16 Q14 18 13 26 L13 44 Q13 47 16 47 L22 47" stroke-width="3"/>
+                            <path d="M32 16 Q38 18 39 26 L39 44 Q39 47 36 47 L30 47" stroke-width="3"/>
+                            <!-- Torso centre line -->
+                            <line x1="26" y1="16" x2="26" y2="47" stroke-width="1.5" opacity="0.4"/>
+
+                            <!-- Scuba tank on back (left side silhouette) -->
+                            <rect x="8" y="17" width="7" height="20" rx="2.5"/>
+                            <path d="M8 19 Q11.5 14 15 19" fill="none" stroke-width="2"/>
+                            <path d="M8 35 Q11.5 39 15 35" fill="none" stroke-width="2"/>
+                            <!-- Tank neck & valve -->
+                            <rect x="10" y="13" width="3.5" height="4" rx="1"/>
+                            <line x1="8" y1="14" x2="16" y2="14" stroke-width="2.5"/>
+
+                            <!-- Left arm (down at side, holding reg) -->
+                            <path d="M20 22 Q17 28 17 34"/>
+
+                            <!-- RIGHT arm — THUMBS UP! -->
+                            <path d="M32 22 Q36 20 38 16"/>
+                            <!-- Thumb up fist -->
+                            <rect x="36" y="10" width="8" height="10" rx="3"/>
+                            <!-- Thumb sticking up -->
+                            <path d="M38 10 Q37 6 40 5 Q43 4 43 8 L43 10"/>
+
+                            <!-- Legs -->
+                            <path d="M20 47 L18 58"/>
+                            <path d="M32 47 L34 58"/>
+
+                            <!-- Fins -->
+                            <path d="M14 58 Q8 60 6 64 Q10 66 18 62 L18 58 Z" fill="currentColor" fill-opacity="0.3"/>
+                            <path d="M38 58 Q44 60 46 64 Q42 66 34 62 L34 58 Z" fill="currentColor" fill-opacity="0.3"/>
+
+                            <!-- Happy bubbles rising from regulator -->
+                            <circle cx="17" cy="36" r="2" stroke-width="1.5"/>
+                            <circle cx="14" cy="30" r="1.5" stroke-width="1.5"/>
+                            <circle cx="18" cy="25" r="1" stroke-width="1.5"/>
+
+                        </svg>
+                        <span class="node-text">Únete</span>
+                        <p class="node-desc">Hazte socio de Atlántida Sub para disfrutar del mar de forma muy económica.</p>
+                    </a>
+
+                    <a href="#contact" class="chart-node node-6 glass-panel" data-index="6">
+                        <i data-lucide="map-pin" class="node-icon"></i>
+                        <span class="node-text">Contacto</span>
+                        <p class="node-desc">Encuentra nuestra sede en Santa Cruz de Tenerife.</p>
+                    </a>
                 </div>
             </div>
-            <div class="hero-scroll-indicator reveal">
-                <p>Desplázate para sumergirte</p>
-                <div class="mouse-scroll">
-                    <div class="wheel"></div>
+
+            <!-- Description and Buttons (Below Chart) -->
+            <div class="hero-details reveal text-center">
+                <p class="hero-subtitle" id="hero-description">
+                    El mar es nuestro punto de encuentro. Somos un club sin ánimo de lucro con <strong>más de 30 años</strong> de trayectoria y <strong>más de 200 socios</strong> en Tenerife. Compartimos inmersiones, salidas semanales y promovemos el buceo de forma segura, accesible y económica.
+                </p>
+
+                <div class="hero-scroll-indicator reveal">
+                    <p>Desplázate para sumergirte</p>
+                    <div class="mouse-scroll">
+                        <div class="wheel"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Nosotros Section -->
+ 
+    <!-- Quiénes Somos Section — Mobile-first compact layout -->
     <section class="about-section" id="about">
         <div class="container">
-            <!-- Disclaimer banner: Club no comercial -->
-            <div class="banner-disclaimer reveal">
-                <i data-lucide="info" class="banner-disclaimer-icon"></i>
-                <p><strong>Nota importante:</strong> No somos una empresa ni un centro comercial de buceo. Atlántida Sub es un <strong>club deportivo sin ánimo de lucro</strong> autogestionado por sus propios socios, con el único objetivo de promover el buceo deportivo y disfrutar del mar en Tenerife de forma segura y accesible.</p>
+
+            <div class="section-header reveal">
+                <span class="section-tag">Familia Atlántida</span>
+                <h2 class="section-title">Compañerismo, Diversión<br>y Respeto por el Mar</h2>
             </div>
 
-            <div class="about-grid">
-                <div class="about-text-content reveal">
-                    <div class="section-tag">Quiénes Somos</div>
-                    <h2 class="section-title">Compañerismo, Diversión y Respeto por el Mar</h2>
-                    <p class="about-p">
-                        Fundado con el firme objetivo de crear un espacio de encuentro para buceadores locales y residentes en Tenerife, Atlántida Sub lleva años uniendo a personas que comparten el mismo amor por el azul. Aquí no eres un cliente; eres un socio y parte fundamental de nuestra familia submarina.
-                    </p>
-                    <p class="about-p">
-                        Nuestra filosofía se basa en la autogestión, la ayuda mutua en el agua y fuera de ella, y el respeto absoluto por el delicado medio marino de Canarias.
-                    </p>
-                    
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon-wrapper">
-                                <i data-lucide="users" class="feature-icon"></i>
-                            </div>
-                            <div>
-                                <h4>Comunidad Autogestionada</h4>
-                                <p>Todos los recursos del club se reinvierten directamente en la recarga de botellas, mantenimiento de material y en organizar las salidas.</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon-wrapper feature-icon-wrapper-blue">
-                                <i data-lucide="shield-check" class="feature-icon"></i>
-                            </div>
-                            <div>
-                                <h4>Seguridad y Apoyo Mutuo</h4>
-                                <p>Fomentamos el sistema de compañeros estricto, la formación continua entre socios y el buceo seguro y planificado.</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Intro philosophy text — two visually distinct messages -->
+            <p class="about-intro reveal">
+                Nuestra filosofía se basa en la <strong>autogestión</strong>. Fundado con el firme objetivo de crear un espacio de encuentro para buceadores locales y residentes en Tenerife.
+            </p>
+
+            <blockquote class="about-quote reveal">
+                <span class="about-quote-mark">"</span>
+                Aquí no eres un cliente; eres un socio y parte fundamental de nuestra familia submarina.
+            </blockquote>
+
+
+            <!-- Key message pill -->
+            <div class="about-pill reveal">
+                <i data-lucide="anchor"></i>
+                <span>Comunidad Autogestionada</span>
+            </div>
+
+            <!-- Stats row — 2 cols on mobile, 4 on desktop -->
+            <div class="about-stats reveal">
+                <div class="about-stat">
+                    <span class="about-stat-number">+30</span>
+                    <span class="about-stat-label">Años de Historia</span>
+                    <span class="about-stat-sub">Decanos del buceo deportivo en Tenerife</span>
                 </div>
-                
-                <div class="about-visual reveal">
-                    <div class="image-wrapper-glow">
-                        <img src="assets/turtle.png" alt="Tortuga marina nadando en Tenerife" class="about-image" id="about-image-turtle">
-                        <div class="image-card-floating">
-                            <span class="floating-number">30+</span>
-                            <span class="floating-label">Años de Comunidad</span>
-                        </div>
-                    </div>
+                <div class="about-stat">
+                    <span class="about-stat-number">+200</span>
+                    <span class="about-stat-label">Socios</span>
+                    <span class="about-stat-sub">Familia submarina activa en Tenerife</span>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Actividades Section -->
-    <section class="activities-section" id="activities">
+    <!-- Actividades y Formación Section -->
+    <section class="club-hub-section" id="activities">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Vida de Club</span>
-                <h2 class="section-title">¿Qué hacemos en Atlántida Sub?</h2>
+                <span class="section-tag">Actividades y Formación</span>
+                <h2 class="section-title">Vida del Club y Aprendizaje</h2>
                 <p class="section-subtitle">
-                    Organizamos actividades semanales dinámicas para mantenernos activos y disfrutar del mar durante todo el año.
+                    Disfruta del mar de Tenerife en comunidad y aprende de forma segura con instructores cualificados del propio club.
                 </p>
             </div>
 
-            <div class="activities-grid">
-                <!-- Activity 1 -->
-                <div class="activity-card reveal">
-                    <div class="activity-icon-box">
-                        <i data-lucide="anchor" class="activity-icon"></i>
-                    </div>
-                    <h3 class="activity-card-title">Varias Salidas Semanales</h3>
-                    <p class="activity-card-desc">
-                        No paramos. Organizamos inmersiones todas las semanas por toda la isla, tanto salidas de costa como embarcados, adaptadas a los niveles y disponibilidad de los socios.
-                    </p>
+            <!-- Interactive Tab Bar -->
+            <div class="tab-container reveal">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="actividades">
+                        <i data-lucide="anchor"></i>
+                        <span>Actividades</span>
+                    </button>
+                    <button class="tab-btn" data-tab="formacion">
+                        <i data-lucide="graduation-cap"></i>
+                        <span>Formación</span>
+                    </button>
                 </div>
 
-                <!-- Activity 2 -->
-                <div class="activity-card reveal">
-                    <div class="activity-icon-box">
-                        <i data-lucide="message-square-heart" class="activity-icon"></i>
+                <!-- Tab Contents -->
+                <div class="tab-content-wrapper">
+                    <!-- Tab 1: Actividades -->
+                    <div class="tab-content active" id="tab-actividades">
+                        <div class="tab-grid">
+                            <div class="tab-illustration">
+                                <!-- SVG Illustration for Actividades -->
+                                <svg viewBox="0 0 200 200" class="illustration-svg">
+                                    <defs>
+                                        <linearGradient id="seaGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                                            <stop offset="0%" stop-color="#060e1d" />
+                                            <stop offset="100%" stop-color="#0c5ca6" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+                                    <!-- Sea Waves -->
+                                    <path d="M 30,120 Q 65,100 100,120 T 170,120 L 170,160 L 30,160 Z" fill="url(#seaGrad)"/>
+                                    <!-- Boat -->
+                                    <path d="M 60,110 L 140,110 L 130,125 L 70,125 Z" fill="#f27a18" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                                    <line x1="100" y1="110" x2="100" y2="85" stroke="#94a3b8" stroke-width="3"/>
+                                    <polygon points="100,85 125,95 100,105" fill="rgba(255,255,255,0.8)"/>
+                                </svg>
+                            </div>
+                            <div class="tab-text">
+                                <h3>Actividades del Club</h3>
+                                <p>Organizamos salidas todas las semanas desde orilla o embarcación y eventos/charlas en nuestra sede.</p>
+                                <ul class="tab-features">
+                                    <li><i data-lucide="check" class="feature-icon"></i> Salidas programadas semanales por los mejores puntos de Tenerife.</li>
+                                    <li><i data-lucide="check" class="feature-icon"></i> Inmersiones de costa o embarcación adaptadas a todos los niveles.</li>
+                                    <li><i data-lucide="check" class="feature-icon"></i> Charlas técnicas de biología, fotografía y seguridad en nuestra sede.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="activity-card-title">Eventos y Charlas Sociales</h3>
-                    <p class="activity-card-desc">
-                        Reuniones en el local del club, charlas sobre biología marina, talleres de mantenimiento de reguladores, buceo técnico y proyecciones de fotografía submarina.
-                    </p>
-                </div>
 
-                <!-- Activity 3 -->
-                <div class="activity-card reveal">
-                    <div class="activity-icon-box">
-                        <i data-lucide="trash-2" class="activity-icon"></i>
+                    <!-- Tab 2: Formación -->
+                    <div class="tab-content" id="tab-formacion">
+                        <div class="tab-grid">
+                            <div class="tab-illustration">
+                                <!-- SVG Illustration for Formación -->
+                                <svg viewBox="0 0 200 200" class="illustration-svg">
+                                    <defs>
+                                        <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#38bdf8" />
+                                            <stop offset="100%" stop-color="#0c5ca6" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+                                    <!-- Badge Shield -->
+                                    <path d="M 70,55 L 130,55 L 130,100 C 130,125 100,145 100,145 C 100,145 70,125 70,100 Z" fill="url(#badgeGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="2.5"/>
+                                    <!-- Star -->
+                                    <polygon points="100,70 105,82 118,82 108,90 112,103 100,95 88,103 92,90 82,82 95,82" fill="#f27a18"/>
+                                    <!-- Graduation line / ribbon -->
+                                    <path d="M 60,110 L 140,110" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="tab-text">
+                                <h3>Cursos de Buceo</h3>
+                                <p>El club cuenta con instructores cualificados que ofrecen todo tipo de formaciones y cursos para todos los niveles.</p>
+                                <ul class="tab-features">
+                                    <li><i data-lucide="check" class="feature-icon"></i> Cursos oficiales (desde bautizos hasta rescue e instructor).</li>
+                                    <li><i data-lucide="check" class="feature-icon"></i> Grupos reducidos enfocado a un aprendizaje real, seguro y personalizado.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="activity-card-title">Limpiezas de Fondos</h3>
-                    <p class="activity-card-desc">
-                        Organizamos jornadas voluntarias de retirada de plásticos y redes fantasmas para proteger activamente los fondos volcánicos y la fauna marina de Tenerife.
-                    </p>
                 </div>
             </div>
         </div>
@@ -266,102 +376,64 @@
     <section class="services-section" id="services">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Servicios al Socio</span>
-                <h2 class="section-title">Logística y Material a Tu Disposición</h2>
+                <span class="section-tag">Servicios del Club</span>
+                <h2 class="section-title">Logística y Alquiler de Equipos</h2>
                 <p class="section-subtitle">
-                    Facilitamos los recursos necesarios para que bucear no sea una actividad costosa. Todo a tarifas exclusivas de mantenimiento para socios.
+                    Facilitamos material y botellas a tarifas exclusivas para socios.
                 </p>
             </div>
 
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box">
-                        <i data-lucide="cylinder" class="service-icon"></i>
+            <div class="services-grid-new reveal">
+                <!-- Service 1: Cargas (with NITROX badge!) -->
+                <div class="service-card-new glass-panel nitrox-card">
+                    <div class="nitrox-badge-container">
+                        <!-- Enriched Air Nitrox Logo -->
+                        <svg viewBox="0 0 120 120" class="nitrox-badge-svg">
+                            <circle cx="60" cy="60" r="52" fill="#eab308" stroke="#166534" stroke-width="8"/>
+                            <text x="60" y="68" font-family="'Outfit', sans-serif" font-weight="900" font-size="20" fill="#166534" text-anchor="middle" letter-spacing="1">NITROX</text>
+                            <text x="60" y="42" font-family="'Outfit', sans-serif" font-weight="800" font-size="7" fill="#166534" text-anchor="middle">AIRE ENRIQUECIDO</text>
+                            <text x="60" y="88" font-family="'Outfit', sans-serif" font-weight="800" font-size="7" fill="#166534" text-anchor="middle">ENRICHED AIR</text>
+                        </svg>
                     </div>
-                    <h3 class="service-card-title">Alquiler y Carga de Botellas</h3>
-                    <p class="service-card-desc">
-                        Contamos con estación de carga propia en el club. Ofrecemos recargas de Aire y Nitrox rápidas y seguras, además del alquiler de botellas de diversas capacidades.
-                    </p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box">
-                        <i data-lucide="briefcase" class="service-icon"></i>
-                    </div>
-                    <h3 class="service-card-title">Alquiler de Material Completo</h3>
-                    <p class="service-card-desc">
-                        ¿Te falta alguna pieza? Alquilamos equipos de buceo regulados y revisados (trajes, chalecos, reguladores, plomos y ordenadores) a precios simbólicos de mantenimiento.
-                    </p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card reveal">
-                    <div class="service-icon-box">
-                        <i data-lucide="zap" class="service-icon"></i>
-                    </div>
-                    <h3 class="service-card-title">Alquiler de Scooters DPV</h3>
-                    <p class="service-card-desc">
-                        Disponemos de propulsores DPV (scooters submarinos) para socios certificados. Vuela bajo el agua, explora zonas alejadas de la costa y reduce tu consumo significativamente.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Formación Section -->
-    <section class="training-section" id="training">
-        <div class="container">
-            <div class="training-layout">
-                <div class="training-info reveal">
-                    <div class="section-tag">Formación Continua</div>
-                    <h3 class="section-title">Cursos de Buceo Impartidos por Socios Instructores</h3>
-                    <p>
-                        Para garantizar un buceo seguro, instructores cualificados y certificados de nuestra propia comunidad imparten cursos formativos periódicamente dentro del club.
-                    </p>
-                    <p>
-                        No buscamos el beneficio comercial, por lo que la formación es personalizada, con ratios de alumnos bajísimos y enfocada al dominio real de la técnica.
-                    </p>
-                    
-                    <div class="training-list">
-                        <div class="training-item">
-                            <span class="training-badge-bullet"></span>
-                            <div>
-                                <h4>Formación Personalizada</h4>
-                                <p>Aprende a tu propio ritmo. Nos centramos en formar buceadores excelentes, seguros y respetuosos con el medio ambiente.</p>
-                            </div>
-                        </div>
-                        <div class="training-item">
-                            <span class="training-badge-bullet"></span>
-                            <div>
-                                <h4>Tarifas Compartidas</h4>
-                                <p>Los costes de los cursos se limitan a cubrir los gastos de certificación, gases y desgaste del material del club.</p>
-                            </div>
-                        </div>
+                    <div class="service-content">
+                        <h3>Carga de Botellas</h3>
+                        <p>Recargas rápidas de Aire y Nitrox en nuestra propia estación homologada.</p>
                     </div>
                 </div>
 
-                <div class="training-card-box reveal">
-                    <div class="course-box">
-                        <span class="course-level">Iniciación</span>
-                        <h4>Bautizo y Open Water</h4>
-                        <p>Tus primeros pasos seguros en el mar con clases personalizadas de costa.</p>
+                <!-- Service 2: Alquiler de Botellas -->
+                <div class="service-card-new glass-panel">
+                    <div class="service-icon-box-new">
+                        <i data-lucide="cylinder" class="service-icon-new"></i>
                     </div>
-                    <div class="course-box">
-                        <span class="course-level">Avanzado</span>
-                        <h4>Advanced & Especialidades</h4>
-                        <p>Profundo, Navegación, Flotabilidad y buceo nocturno en Tenerife.</p>
+                    <div class="service-content">
+                        <h3>Alquiler de Botellas</h3>
+                        <p>Disponemos de botellas de aire y nitrox, acero y aluminio en diferentes capacidades (12/15L).</p>
+                        <span class="service-detail">AIRE/NITROX y 12/15</span>
                     </div>
-                    <div class="course-box">
-                        <span class="course-level">Seguridad</span>
-                        <h4>Rescue & Primeros Auxilios</h4>
-                        <p>Aprende a prevenir y gestionar emergencias de buceo de manera profesional.</p>
+                </div>
+
+                <!-- Service 3: Alquiler de Equipos Completos -->
+                <div class="service-card-new glass-panel">
+                    <div class="service-icon-box-new">
+                        <i data-lucide="briefcase" class="service-icon-new"></i>
                     </div>
-                    <div class="course-box">
-                        <span class="course-level">Especializado</span>
-                        <h4>DPV / Scooter & Nitrox</h4>
-                        <p>Aprende a pilotar propulsores submarinos y a bucear con mezclas enriquecidas.</p>
+                    <div class="service-content">
+                        <h3>Equipos Completos</h3>
+                        <p>Alquiler de neoprenos, chalecos (BCD) y reguladores.</p>
+                        <span class="service-detail">Revisados periódicamente</span>
+                    </div>
+                </div>
+
+                <!-- Service 4: Alquiler de Scooters / DPV -->
+                <div class="service-card-new glass-panel dpv-card">
+                    <div class="service-icon-box-new">
+                        <i data-lucide="zap" class="service-icon-new"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Scooters / DPV</h3>
+                        <p>Disponemos de scooters Suex para alquilar.</p>
+                        <span class="service-detail">Exploración y autonomía</span>
                     </div>
                 </div>
             </div>
@@ -398,7 +470,7 @@
                         <span class="couple-icon">👩‍❤️‍👨</span>
                         <div class="couple-text">
                             <h4>Descuento Especial Parejas</h4>
-                            <p>Bucear acompañado es mejor. Si os unís como pareja al club, vuestra tarifa es de solo <strong>75€/trimestre</strong> conjunto (37,50€ por persona).</p>
+                            <p>Bucear acompañado es mejor. Si sois una pareja, la tarifa de socio es reducida.</p>
                         </div>
                     </div>
                     
@@ -415,11 +487,11 @@
                             </div>
                             <div class="pricing-feature">
                                 <i data-lucide="check-circle" class="check-icon"></i>
-                                <span>Alquiler de botellas y material técnico a tarifas reducidas de mantenimiento.</span>
+                                <span>Alquiler de botellas y material a tarifas reducidas.</span>
                             </div>
                             <div class="pricing-feature">
                                 <i data-lucide="check-circle" class="check-icon"></i>
-                                <span>Participación en todas las salidas organizadas semanales.</span>
+                                <span>Participación en las salidas semanales.</span>
                             </div>
                             <div class="pricing-feature">
                                 <i data-lucide="check-circle" class="check-icon"></i>
@@ -432,10 +504,7 @@
                         </div>
                     </div>
 
-                    <div class="pricing-footer">
-                        <a href="#contact" class="btn btn-primary btn-block btn-pulse btn-lg" id="btn-pricing-join">Solicitar Ingreso al Club 🌊</a>
-                        <p class="pricing-note">Para formalizar la inscripción realizaremos una breve reunión en nuestro local para conocernos.</p>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -452,235 +521,193 @@
                 </p>
             </div>
 
-            <div class="map-grid">
-                <!-- SVG Interactive Map -->
-                <div class="map-visual-wrapper reveal">
-                    <svg viewBox="0 0 500 350" class="map-svg" id="tenerife-map-svg">
-                        <!-- Tenerife Path outline (Highly Stylized) -->
-                        <path class="island-path" d="M 30,140 C 50,180 60,200 80,200 C 110,240 130,270 150,280 C 180,290 200,300 220,300 C 260,260 280,220 300,200 C 330,160 350,140 370,120 C 390,100 395,95 400,90 C 430,70 440,60 450,50 C 420,60 400,65 380,70 C 290,95 240,110 200,110 C 160,110 140,120 120,120 Z" />
-                        
-                        <!-- Pins -->
-                        <!-- Tabaiba -->
-                        <g class="map-pin" data-spot="tabaiba" transform="translate(385, 112)">
-                            <circle class="map-pin-glow" cx="0" cy="0" r="14" />
-                            <circle class="map-pin-circle" cx="0" cy="0" r="6" />
-                            <text class="map-pin-label" x="12" y="4">Tabaiba</text>
-                        </g>
-
-                        <!-- Radazul -->
-                        <g class="map-pin" data-spot="radazul" transform="translate(375, 125)">
-                            <circle class="map-pin-glow" cx="0" cy="0" r="14" />
-                            <circle class="map-pin-circle" cx="0" cy="0" r="6" />
-                            <text class="map-pin-label" x="12" y="4">Radazul</text>
-                        </g>
-
-                        <!-- Abades -->
-                        <g class="map-pin" data-spot="abades" transform="translate(290, 215)">
-                            <circle class="map-pin-glow" cx="0" cy="0" r="14" />
-                            <circle class="map-pin-circle" cx="0" cy="0" r="6" />
-                            <text class="map-pin-label" x="-60" y="4">Abades</text>
-                        </g>
-
-                        <!-- Las Galletas (Chucho Amarillo) -->
-                        <g class="map-pin" data-spot="lasgalletas" transform="translate(220, 305)">
-                            <circle class="map-pin-glow" cx="0" cy="0" r="14" />
-                            <circle class="map-pin-circle" cx="0" cy="0" r="6" />
-                            <text class="map-pin-label" x="-120" y="-6">Las Galletas</text>
-                        </g>
-
-                        <!-- El Condesito -->
-                        <g class="map-pin" data-spot="condesito" transform="translate(205, 308)">
-                            <circle class="map-pin-glow" cx="0" cy="0" r="14" />
-                            <circle class="map-pin-circle" cx="0" cy="0" r="6" />
-                            <text class="map-pin-label" x="-95" y="15">El Condesito</text>
-                        </g>
-
-                        <!-- Los Gigantes -->
-                        <g class="map-pin" data-spot="gigantes" transform="translate(75, 205)">
-                            <circle class="map-pin-glow" cx="0" cy="0" r="14" />
-                            <circle class="map-pin-circle" cx="0" cy="0" r="6" />
-                            <text class="map-pin-label" x="12" y="4">Los Gigantes</text>
-                        </g>
-                    </svg>
-                </div>
-
-                <!-- Info Card on Click/Hover -->
-                <div class="map-info-container reveal">
-                    <div class="map-info-card glass-panel" id="map-info-card">
-                        <!-- Placeholder State -->
-                        <div class="map-placeholder-text" id="map-placeholder">
-                            <i data-lucide="map-pin"></i>
-                            <h3>Explora Tenerife</h3>
-                            <p>Haz clic en cualquiera de los puntos marcados en el mapa de la isla para ver información detallada de la inmersión, profundidad y nivel requerido.</p>
-                        </div>
-
-                        <!-- Spot detail states -->
-                        <!-- Radazul -->
-                        <div class="map-details" id="spot-radazul">
-                            <div class="spot-title-wrapper">
-                                <h3>Bahía de Radazul</h3>
-                                <span class="badge">Iniciación / Avanzado</span>
-                            </div>
-                            <div class="spot-meta-grid">
-                                <div class="meta-item">
-                                    <i data-lucide="arrow-down" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Profundidad</span>
-                                        <strong>10m a 40m+</strong>
-                                    </div>
-                                </div>
-                                <div class="meta-item">
-                                    <i data-lucide="eye" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Visibilidad</span>
-                                        <strong>Excelente (30m+)</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="spot-description">
-                                Inmersión de costa muy cómoda con accesos escalonados. Es una zona muy protegida de los vientos dominantes. Cuenta con una gran pared que cae de manera progresiva, ideal tanto para bautizos como para entrenamiento de apnea y buceo profundo. Destaca por su fauna (chuchos, sepias, pulpos) y aguas cristalinas.
-                            </p>
-                        </div>
-
-                        <!-- Tabaiba -->
-                        <div class="map-details" id="spot-tabaiba">
-                            <div class="spot-title-wrapper">
-                                <h3>Pecio de Tabaiba (El Peñón)</h3>
-                                <span class="badge badge-orange">Nivel Medio / Avanzado</span>
-                            </div>
-                            <div class="spot-meta-grid">
-                                <div class="meta-item">
-                                    <i data-lucide="arrow-down" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Profundidad</span>
-                                        <strong>18m a 32m</strong>
-                                    </div>
-                                </div>
-                                <div class="meta-item">
-                                    <i data-lucide="anchor" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Tipo</span>
-                                        <strong>Pecio (Barco Hundido)</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="spot-description">
-                                Una de las inmersiones de pecio más icónicas de Canarias. El remolcador 'El Peñón' fue hundido intencionadamente en 2006 para crear un arrecife artificial. Hoy yace en posición de navegación y es el refugio de grandes bancos de roncadores, bicudas (barracudas) y trompetas. Apto para penetración con titulación adecuada.
-                            </p>
-                        </div>
-
-                        <!-- Abades -->
-                        <div class="map-details" id="spot-abades">
-                            <div class="spot-title-wrapper">
-                                <h3>Bahía de Abades</h3>
-                                <span class="badge">Apto Principiantes</span>
-                            </div>
-                            <div class="spot-meta-grid">
-                                <div class="meta-item">
-                                    <i data-lucide="arrow-down" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Profundidad</span>
-                                        <strong>5m a 15m</strong>
-                                    </div>
-                                </div>
-                                <div class="meta-item">
-                                    <i data-lucide="shield" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Acceso</span>
-                                        <strong>Playa de Arena</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="spot-description">
-                                Una bahía arenosa muy protegida y de fácil acceso desde la playa. Cuenta con una gran pradera de sebadal (césped marino) que alberga una biodiversidad fascinante. Es habitual avistar caballitos de mar, chuchos y angelotes (tiburón ángel) descansando en la arena. Ideal para inmersiones nocturnas y cursos.
-                            </p>
-                        </div>
-
-                        <!-- Las Galletas -->
-                        <div class="map-details" id="spot-lasgalletas">
-                            <div class="spot-title-wrapper">
-                                <h3>El Chucho Amarillo (Las Galletas)</h3>
-                                <span class="badge badge-orange">Nivel Medio</span>
-                            </div>
-                            <div class="spot-meta-grid">
-                                <div class="meta-item">
-                                    <i data-lucide="arrow-down" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Profundidad</span>
-                                        <strong>15m a 22m</strong>
-                                    </div>
-                                </div>
-                                <div class="meta-item">
-                                    <i data-lucide="ship" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Tipo</span>
-                                        <strong>Salida en Barco</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="spot-description">
-                                Inmersión emblemática del sur de Tenerife. Se realiza desde embarcación y es famosa por la abundancia y amabilidad de las rayas y chuchos (rayas amarillas, chuchos negros de gran tamaño y rayas mariposa) que habitan este arrecife natural. El relieve se compone de formaciones rocosas volcánicas rodeadas de arena.
-                            </p>
-                        </div>
-
-                        <!-- El Condesito -->
-                        <div class="map-details" id="spot-condesito">
-                            <div class="spot-title-wrapper">
-                                <h3>Pecio El Condesito</h3>
-                                <span class="badge">Nivel Fácil / Medio</span>
-                            </div>
-                            <div class="spot-meta-grid">
-                                <div class="meta-item">
-                                    <i data-lucide="arrow-down" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Profundidad</span>
-                                        <strong>12m a 20m</strong>
-                                    </div>
-                                </div>
-                                <div class="meta-item">
-                                    <i data-lucide="compass" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Detalle</span>
-                                        <strong>Fauna Basáltica</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="spot-description">
-                                Pecio de un barco de carga encallado en 1971 frente a la costa sur. Debido a su poca profundidad, está muy iluminado por la luz del sol. El casco está dividido en secciones, sirviendo de refugio a trompetas, pulpos y cardúmenes de cabrillas. Destaca la geografía de columnas basálticas exagonales del fondo.
-                            </p>
-                        </div>
-
-                        <!-- Los Gigantes -->
-                        <div class="map-details" id="spot-gigantes">
-                            <div class="spot-title-wrapper">
-                                <h3>Paredes de Los Gigantes</h3>
-                                <span class="badge badge-orange">Nivel Avanzado</span>
-                            </div>
-                            <div class="spot-meta-grid">
-                                <div class="meta-item">
-                                    <i data-lucide="arrow-down" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Profundidad</span>
-                                        <strong>15m a 45m+</strong>
-                                    </div>
-                                </div>
-                                <div class="meta-item">
-                                    <i data-lucide="gem" class="meta-item-icon"></i>
-                                    <div class="meta-item-text">
-                                        <span>Atracción</span>
-                                        <strong>Coral Negro / Cuevas</strong>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="spot-description">
-                                Inmersión a los pies de los imponentes acantilados basálticos de Los Gigantes. Los paisajes subacuáticos son dramáticos, con grandes cañones de lava, arcos de piedra y cuevas volcánicas. En las zonas más profundas es posible contemplar ramificaciones de coral negro y toparse con especies pelágicas de paso.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Leaflet Map -->
+            <div class="leaflet-map-wrapper reveal">
+                <div id="tenerife-leaflet-map"></div>
             </div>
         </div>
     </section>
+
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+    (function() {
+        var map = L.map('tenerife-leaflet-map', {
+            center: [28.22, -16.58],
+            zoom: 10,
+            zoomControl: true,
+            scrollWheelZoom: false
+        });
+
+        // Ortofoto base layer — Grafcan (Gobierno de Canarias)
+        L.tileLayer.wms('https://idecan1.grafcan.es/ServicioWMS/Ortofoto?', {
+            layers: 'ortofotos',
+            format: 'image/jpeg',
+            transparent: false,
+            version: '1.1.1',
+            attribution: '&copy; <a href="https://www.grafcan.es" target="_blank">Grafcan – Gobierno de Canarias</a>',
+            maxZoom: 20
+        }).addTo(map);
+
+        // ── Icons ───────────────────────────────────────
+        var clubIcon = L.divIcon({
+            className: '',
+            html: '<div style="background:linear-gradient(135deg,#f27a18,#e65c00);width:34px;height:34px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px rgba(242,122,24,0.5),0 4px 14px rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;font-size:16px;">🏠</div>',
+            iconSize: [34, 34], iconAnchor: [17, 17], popupAnchor: [0, -22]
+        });
+        var diveIcon = L.divIcon({
+            className: '',
+            html: '<div style="background:linear-gradient(135deg,#0ea5e9,#0c5ca6);width:30px;height:30px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 3px rgba(14,165,233,0.4),0 4px 12px rgba(0,0,0,0.55);display:flex;align-items:center;justify-content:center;font-size:14px;">🤿</div>',
+            iconSize: [30, 30], iconAnchor: [15, 15], popupAnchor: [0, -20]
+        });
+
+        // ── Popup builder (sin fotos) ────────────────────
+        function px(name, depth, level, access, desc) {
+            return '<div style="font-family:\'Inter\',Arial,sans-serif;min-width:230px;max-width:280px;">'
+                + '<h3 style="margin:0 0 8px;font-size:0.97rem;font-weight:700;color:#0c5ca6;line-height:1.3;">' + name + '</h3>'
+                + '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px;">'
+                + '<span style="background:#e0f2fe;color:#0369a1;border-radius:20px;padding:2px 9px;font-size:0.68rem;font-weight:700;">⬇ ' + depth + '</span>'
+                + '<span style="background:#fef9c3;color:#854d0e;border-radius:20px;padding:2px 9px;font-size:0.68rem;font-weight:700;">' + level + '</span>'
+                + '<span style="background:#f0fdf4;color:#166534;border-radius:20px;padding:2px 9px;font-size:0.68rem;font-weight:700;">🚶 ' + access + '</span>'
+                + '</div>'
+                + '<p style="font-size:0.78rem;color:#334155;margin:0;line-height:1.55;">' + desc + '</p>'
+                + '</div>';
+        }
+
+        // ── Club de Buceo ───────────────────────────────
+        L.marker([28.461420476871808, -16.26003764376064], {icon: clubIcon}).addTo(map)
+            .bindPopup('<div style="font-family:\'Inter\',Arial,sans-serif;min-width:210px;">'
+                + '<h3 style="margin:0 0 5px;font-size:1rem;font-weight:700;color:#f27a18;">🏠 Atlántida Sub</h3>'
+                + '<p style="font-size:0.8rem;color:#334155;margin:0;">Calle Eduardo Zamacois, 3<br>38005 Santa Cruz de Tenerife</p>'
+                + '</div>');
+
+        // ── Puntos de Inmersión ─────────────────────────
+
+        // 1. Añaza
+        L.marker([28.420379, -16.295739], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Añaza', '8–25m', 'Iniciación/Medio', 'Costa',
+                'Fondo volcánico en las inmediaciones del puerto de Añaza. Abundante vida bentónica: pulpos, morenas, castañuelas y estrellas de mar. Buen acceso desde tierra y excelente visibilidad habitual.'));
+
+        // 2. Boca Cangrejo
+        L.marker([28.406964312520152, -16.3126074455452], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Boca Cangrejo', '10–35m', 'Medio/Avanzado', 'Costa',
+                'Pared y fondos rocosos con cuevas y túneles naturales. Avistamiento frecuente de tortugas, chuchos y morenas. Corrientes variables según las mareas. Zona muy conocida por los buceadores locales.'));
+
+        // 3. Radazul
+        L.marker([28.401508, -16.324224], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Bahía de Radazul', '10–40m+', 'Iniciación/Avanzado', 'Costa',
+                'Inmersión de costa muy cómoda con acceso escalonado. Zona protegida de los vientos dominantes con gran pared de caída progresiva. Ideal para bautizos y entrenamiento en profundidad. Destaca por chuchos, sepias y pulpos en aguas cristalinas.'));
+
+        // 4. Tabaiba (El Peñón)
+        L.marker([28.40151630656366, -16.330653607446084], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Pecio de Tabaiba — El Peñón', '18–32m', 'Medio/Avanzado', 'Barco',
+                'Remolcador hundido intencionadamente en 2006 para crear un arrecife artificial. Yace en posición de navegación y es refugio de roncadores, bicudas y trompetas. Apto para penetración con titulación adecuada.'));
+
+        // 5. El Porís
+        L.marker([28.164308198427126, -16.42876020185436], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('El Porís', '5–22m', 'Todos los niveles', 'Costa',
+                'Pequeña bahía en la costa sureste con fondo mixto de arena y roca volcánica. Excelente para inmersiones nocturnas. Habitual avistamiento de angelotes y sepias. Agua muy tranquila y acceso sencillo.'));
+
+        // 6. Abades
+        L.marker([28.14236913113434, -16.43978649291841], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Bahía de Abades', '5–18m', 'Principiantes', 'Costa',
+                'Bahía arenosa muy protegida con gran pradera de sebadal (césped marino). Biodiversidad fascinante: caballitos de mar, chuchos y angelotes descansando en la arena. Ideal para cursos y buceo nocturno.'));
+
+        // 7. Los Abrigos
+        L.marker([28.028065369815106, -16.591458376734526], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Los Abrigos', '8–25m', 'Todos los niveles', 'Costa',
+                'Puerto pesquero tradicional con fondos mixtos de roca y arena. Presencia habitual de pulpos, calamares y fauna bentónica variada. Zona tranquila con buena visibilidad y escaso oleaje.'));
+
+        // 8. Las Eras
+        L.marker([28.19378219607902, -16.422843250797005], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Las Eras', '8–30m', 'Nivel Medio', 'Costa',
+                'Enclave de gran belleza con formaciones basálticas singulares. Paredes tapizadas de gorgonias y anémonas. Fauna variada: peces loro, cabrachos y morenas. Corrientes ocasionales que añaden emoción a la inmersión.'));
+
+        // 9. Montaña Amarilla
+        L.marker([28.008994297448158, -16.637960462680628], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Montaña Amarilla', '3–18m', 'Todos los niveles', 'Costa',
+                'Reserva marina con aguas cristalinas y gran biodiversidad. Fondos de arena blanca con formaciones de roca toba amarilla volcánica. Lugar icónico de Tenerife, ideal para snorkel, apnea y buceo de iniciación.'));
+
+        // 10. Las Galletas
+        L.marker([28.00675763269211, -16.65917419783864], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Las Galletas', '15–22m', 'Nivel Medio', 'Barco',
+                'Inmersión emblemática del sur de Tenerife, famosa por la abundancia de chuchos, rayas amarillas y rayas mariposa. El arrecife natural de roca volcánica es hogar de una fauna de gran tamaño y cardúmenes de colores.'));
+
+        // 11. Faro de Punta Rasca
+        L.marker([28.00037422577456, -16.695055449478563], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Faro de Punta Rasca', '5–30m', 'Medio/Avanzado', 'Costa',
+                'El punto más meridional de Tenerife. Fondos rocosos con intensa actividad marina por el encuentro de corrientes atlánticas. Avistamiento de tortugas, barracudas y mantarrayas en temporada. Visibilidad excelente.'));
+
+        // 12. El Condesito
+        L.marker([28.00748380625868, -16.706303440487396], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Pecio El Condesito', '12–20m', 'Fácil/Medio', 'Barco',
+                'Pecio de un barco de carga encallado en 1971 frente a la costa sur. Muy iluminado por el sol gracias a su poca profundidad. El casco dividido sirve de refugio a trompetas, pulpos y cabrillas. Destacan las columnas basálticas hexagonales del fondo.'));
+
+        // 13. Cueva de las Morenas
+        L.marker([28.02600237701761, -16.707183244672756], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Cueva de las Morenas', '10–28m', 'Nivel Medio', 'Costa',
+                'Sistema de cuevas y túneles volcánicos habitados por grandes morenas mediterráneas. Interior oscuro y rico en esponjas y corales. Es imprescindible llevar linterna. El exterior cuenta con abundante fauna pelágica.'));
+
+        // 14. El Bufadero
+        L.marker([28.034642316915896, -16.710004963958866], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('El Bufadero', '8–25m', 'Nivel Medio', 'Costa',
+                'Paredes verticales y grandes bloques de lava que crean un paisaje dramático. Rico en vida fija: gorgonias, esponjas y erizos. Las grietas son refugio de langostas y morenas. Visibilidad variable según las condiciones del mar.'));
+
+        // 15. Playa San Juan
+        L.marker([28.17964041148842, -16.815004352593792], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Playa San Juan', '5–20m', 'Todos los niveles', 'Costa',
+                'Pequeña localidad costera del suroeste con fondos mixtos de arena y roca volcánica. Zona tranquila con fauna bentónica abundante. Excelente para buceo nocturno y observación de sepias y pulpos.'));
+
+        // 16. Cueva de los Cerebros
+        L.marker([28.172963581077603, -16.808214910152422], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Cueva de los Cerebros', '15–30m', 'Medio/Avanzado', 'Costa',
+                'Famosa por sus singulares formaciones de coral cerebro y coral negro que tapizan las paredes de la cueva volcánica. Una de las inmersiones más fotogénicas del sur de Tenerife. Requiere linterna y experiencia en espacios confinados.'));
+
+        // 17. El Balito
+        L.marker([28.13937379240068, -16.791415394632615], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('El Balito', '8–25m', 'Todos los niveles', 'Costa',
+                'Fondos de roca volcánica con arrecifes naturales y formaciones de lava. Biodiversidad destacada con peces loro, sargos y cabrachotes. Buena visibilidad y oleaje generalmente moderado. Acceso desde la costa rocosa.'));
+
+        // 18. Punta Prieta
+        L.marker([28.272474811587056, -16.38481743846258], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Punta Prieta', '5–20m', 'Todos los niveles', 'Costa',
+                'Punta rocosa de acceso cómodo desde tierra. Fondos de lava con colonias de coral y esponjas. Zona popular para formación y familiarización con el entorno marino canario. Buena visibilidad habitual.'));
+
+        // 19. Acantilado de Los Gigantes
+        L.marker([28.27655849132646, -16.86229921848485], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Acantilado de Los Gigantes', '15–45m+', 'Avanzado', 'Barco',
+                'Inmersión espectacular a los pies de los imponentes acantilados basálticos. Cañones de lava, arcos y cuevas volcánicas de gran tamaño. En profundidad: coral negro y especies pelágicas de paso. Una de las experiencias más emocionantes de Canarias.'));
+
+        // 20. Tubo de Garachico
+        L.marker([28.378896248395666, -16.769001107800353], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Tubo de Garachico', '6–22m', 'Todos los niveles', 'Costa',
+                'Antiguo tubo lávico sumergido originado en la erupción del volcán de Garachico en 1706. El interior está repleto de langostas, pulpos y morenas. Paisaje único e irrepetible. Una de las inmersiones más especiales del norte de Tenerife.'));
+
+        // 21. Baja del Realejo
+        L.marker([28.404207108341787, -16.597250930937587], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Baja del Realejo', '12–28m', 'Nivel Medio', 'Barco',
+                'Zona montañosa submarina frente al Puerto de El Realejo. Abundante vida pelágica y bentónica. Área protegida con excelente visibilidad y presencia habitual de tortugas marinas y grandes bancos de peces.'));
+
+        // 22. La Catedral y La Rapadura
+        L.marker([28.441364259071978, -16.49676400708518], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('La Catedral y La Rapadura', '10–40m', 'Medio/Avanzado', 'Costa',
+                'Espectaculares arcos y cuevas de lava volcánica que dan nombre a esta inmersión. Los pasajes naturales crean una catedral subacuática de luz y sombra. Habitual encuentro con grandes bancos de sargos, abadejos y morenas.'));
+
+        // 23. Jóver
+        L.marker([28.547302828048686, -16.370575471623244], {icon: diveIcon}).addTo(map)
+            .bindPopup(px('Jóver', '10–30m', 'Todos los niveles', 'Costa',
+                'Punto de buceo en la costa norte con fondos volcánicos variados. Zona habitualmente tranquila con buena biodiversidad. Presencia de morenas, pulpos y fauna típica canaria. Entorno natural poco masificado.'));
+
+        // ── Ajustar vista a todos los marcadores ────────
+        map.fitBounds([
+            [28.00037, -16.86230],
+            [28.54730, -16.26003]
+        ], { padding: [35, 35] });
+
+    })();
+    </script>
+
 
     <!-- Contact & Instagram Section -->
     <section class="contact-section" id="contact">
@@ -697,7 +724,18 @@
                 <!-- Info and Instagram Panel -->
                 <div class="contact-info-panel reveal">
                     <h3 class="contact-panel-title">Información del Club</h3>
-                    
+
+                    <!-- Instagram CTA Link -->
+                    <a href="https://www.instagram.com/atlantida_sub/" target="_blank" rel="noopener noreferrer" class="instagram-cta-simple">
+                        <svg viewBox="0 0 24 24" class="instagram-svg-logo" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>Accede a nuestra cuenta de Instagram</span>
+                        <i data-lucide="external-link" class="arrow-icon"></i>
+                    </a>
+
                     <div class="contact-details">
                         <div class="contact-info-item">
                             <div class="contact-icon-wrapper">
@@ -706,6 +744,18 @@
                             <div>
                                 <h4>Ubicación</h4>
                                 <p>Calle Eduardo Zamacois, 3<br>38005 Santa Cruz de Tenerife, Canarias</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon-wrapper whatsapp-icon-wrapper">
+                                <svg viewBox="0 0 24 24" class="contact-icon" fill="currentColor">
+                                    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.37 5.054L2 22l5.077-1.331a9.936 9.936 0 004.93 1.315h.005c5.505 0 9.988-4.478 9.99-9.984A10.01 10.01 0 0012.012 2zm5.79 14.152c-.253.715-1.47 1.408-2.01 1.452-.495.04-1.134.053-1.815-.164a10.026 10.026 0 01-4.321-2.585 10.375 10.375 0 01-2.9-4.148c-.37-.813-.578-1.782-.234-2.383.218-.382.493-.448.742-.505.158-.036.326-.036.467-.038.163-.002.348-.004.5.348.174.407.592 1.442.645 1.55.053.107.088.232.018.373-.07.14-.15.228-.298.4-.148.172-.313.384-.447.51-.148.14-.303.292-.13.593.172.3.766 1.264 1.644 2.046.996.886 1.834 1.157 2.094 1.286.26.13.41.11.56-.06.152-.172.647-.754.82-.93.175-.177.348-.148.587-.06.24.088 1.52.717 1.782.848.262.13.437.195.5.305.065.11.065.642-.187 1.357z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Contacto WhatsApp <span style="font-size: 0.75rem; font-weight: normal; color: #25D366; background: rgba(37, 211, 102, 0.1); padding: 2px 6px; border-radius: 10px; margin-left: 4px; border: 1px solid rgba(37, 211, 102, 0.2);">Preferible</span></h4>
+                                <p><a href="https://wa.me/34640728581" target="_blank" rel="noopener noreferrer" class="contact-link">640 72 85 81</a></p>
                             </div>
                         </div>
 
@@ -720,20 +770,18 @@
                         </div>
                     </div>
 
-                    <!-- Instagram Promo Card -->
-                    <div class="instagram-cta-card">
-                        <div class="instagram-header">
-                            <i data-lucide="instagram" class="instagram-icon"></i>
-                            <h4>@atlantida_sub</h4>
-                        </div>
-                        <p>
-                            ¡Conéctate con nuestra comunidad! En nuestro Instagram publicamos fotos, vídeos diarios de nuestras inmersiones en Tenerife y los avisos de las salidas de fin de semana.
-                        </p>
-                        <div>
-                            <a href="https://www.instagram.com/atlantida_sub/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                                Visitar Instagram <i data-lucide="external-link" class="btn-icon"></i>
-                            </a>
-                        </div>
+                    <!-- Embedded Google Map -->
+                    <div class="contact-map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Calle%20Eduardo%20Zamacois%203,%20Santa%20Cruz%20de%20Tenerife&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="180" 
+                            style="border:0; filter: grayscale(80%) invert(90%) contrast(100%);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de Atlántida Sub en Google Maps">
+                        </iframe>
                     </div>
                 </div>
 
@@ -756,19 +804,7 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="form-subject">¿En qué estás interesado/a?</label>
-                                <select id="form-subject" required>
-                                    <option value="" disabled selected>Selecciona una opción</option>
-                                    <option value="socio">Hacerse Socio / Registro de Pareja</option>
-                                    <option value="curso">Formación de Buceo (Cursos)</option>
-                                    <option value="material">Alquiler de Material / Scooters DPV</option>
-                                    <option value="salidas">Inmersiones Semanales</option>
-                                    <option value="otro">Otras Consultas</option>
-                                </select>
-                            </div>
-                        </div>
+                        <input type="hidden" id="form-subject" value="Consulta General">
 
                         <div class="form-row">
                             <div class="form-group">
@@ -804,15 +840,13 @@
                     Promoviendo el buceo deportivo y recreativo de forma segura, económica y en comunidad en la isla de Tenerife desde hace décadas. Entidad sin ánimo de lucro.
                 </p>
             </div>
-            
             <div class="footer-links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
                     <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Quiénes Somos</a></li>
-                    <li><a href="#activities">Actividades</a></li>
+                    <li><a href="#activities" data-target-tab="actividades">Actividades</a></li>
                     <li><a href="#services">Servicios</a></li>
-                    <li><a href="#training">Formación</a></li>
+                    <li><a href="#activities" data-target-tab="formacion">Formación</a></li>
                     <li><a href="#pricing">Hazte Socio</a></li>
                 </ul>
             </div>
@@ -833,6 +867,8 @@
             </div>
         </div>
     </footer>
+
+
 
     <!-- App Scripts -->
     <script src="app.js"></script>

@@ -104,36 +104,68 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeCanvas();
 
         class Bubble {
-            constructor() {
+            constructor(isTemporary = false) {
+                this.isTemporary = isTemporary;
                 this.reset();
-                this.y = Math.random() * canvas.height; // Random start height initially
+                if (!isTemporary) {
+                    this.y = Math.random() * canvas.height; // Random start height initially
+                }
             }
 
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = canvas.height + Math.random() * 100;
-                this.size = Math.random() * 3 + 1; // Size 1px to 4px
-                this.speedY = Math.random() * 0.6 + 0.15; // Moderate speed up
-                this.speedX = Math.random() * 0.4 - 0.2; // Slight drift
-                this.opacity = Math.random() * 0.35 + 0.05; // Subtly transparent
-                this.wobble = Math.random() * 0.02;
+
+                // Random colour: white, sky-blue or orange (club palette)
+                const palette = [
+                    '255, 255, 255',   // white
+                    '56, 189, 248',    // sky blue
+                    '242, 122, 24'     // orange
+                ];
+                this.color = palette[Math.floor(Math.random() * palette.length)];
+
+                if (this.isTemporary) {
+                    this.size = Math.random() * 6 + 3;
+                    this.speedY = Math.random() * 3.5 + 2;
+                    this.speedX = Math.random() * 0.8 - 0.4;
+                    this.opacity = Math.random() * 0.55 + 0.3;
+                    this.wobble = Math.random() * 0.03;
+                } else {
+                    this.size = Math.random() * 3.5 + 1;
+                    this.speedY = Math.random() * 0.6 + 0.15;
+                    this.speedX = Math.random() * 0.4 - 0.2;
+                    this.opacity = Math.random() * 0.35 + 0.08;
+                    this.wobble = Math.random() * 0.02;
+                }
             }
 
             update() {
                 this.y -= this.speedY;
                 this.x += this.speedX + Math.sin(this.y * this.wobble) * 0.15;
-                
-                // If bubble goes off top, reset to bottom
-                if (this.y < -10) {
-                    this.reset();
-                }
             }
 
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                // Draw in corporate blue/glow tone: rgba(56, 189, 248, opacity)
-                ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
+
+                // Coloured translucent outline
+                ctx.strokeStyle = `rgba(${this.color}, ${this.opacity})`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                // Subtle fill tint
+                ctx.fillStyle = `rgba(${this.color}, ${this.opacity * 0.12})`;
+                ctx.fill();
+
+                // Specular highlight (bright dot top-left)
+                ctx.beginPath();
+                ctx.arc(
+                    this.x - this.size * 0.35,
+                    this.y - this.size * 0.35,
+                    this.size * 0.2,
+                    0, Math.PI * 2
+                );
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity * 1.8})`;
                 ctx.fill();
             }
         }
@@ -143,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bubblesArray = [];
             const numberOfBubbles = Math.floor((canvas.width * canvas.height) / 20000);
             for (let i = 0; i < numberOfBubbles; i++) {
-                bubblesArray.push(new Bubble());
+                bubblesArray.push(new Bubble(false));
             }
         };
         initBubbles();
@@ -152,13 +184,37 @@ document.addEventListener('DOMContentLoaded', () => {
         // Animation Loop
         const animateBubbles = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < bubblesArray.length; i++) {
+            for (let i = bubblesArray.length - 1; i >= 0; i--) {
                 bubblesArray[i].update();
                 bubblesArray[i].draw();
+                
+                // If bubble goes off top
+                if (bubblesArray[i].y < -10) {
+                    if (bubblesArray[i].isTemporary) {
+                        bubblesArray.splice(i, 1); // remove temporary scrolling bubbles!
+                    } else {
+                        bubblesArray[i].reset(); // reset background bubbles
+                    }
+                }
             }
             requestAnimationFrame(animateBubbles);
         };
         animateBubbles();
+
+        // Spawn bubbles during navigation scrolling
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            const scrollDelta = Math.abs(currentScrollY - lastScrollY);
+            
+            if (scrollDelta > 3) {
+                const spawnCount = Math.min(Math.floor(scrollDelta / 12), 5);
+                for (let i = 0; i < spawnCount; i++) {
+                    bubblesArray.push(new Bubble(true)); // Spawn temporary fast bubble
+                }
+            }
+            lastScrollY = currentScrollY;
+        });
     }
 
     // 7. Interactive Map of Tenerife Spots logic
@@ -252,6 +308,93 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 8000);
 
             }, 1200);
+        });
+    }
+
+    // 9. Interactive Bubble Pop effect & Scroll delay
+    const chartNodes = document.querySelectorAll('.chart-node');
+    chartNodes.forEach(node => {
+        node.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            // Add popup pop class
+            this.classList.add('pop-effect');
+            
+            // Delay to let bubble burst animation play before scrolling
+            setTimeout(() => {
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+                
+                // Remove pop class after scroll is triggered
+                setTimeout(() => {
+                    this.classList.remove('pop-effect');
+                }, 600);
+            }, 350);
+        });
+    });
+
+    // 10. Floating FAB back-to-chart toggle
+    const fabChart = document.getElementById('fab-back-to-chart');
+    if (fabChart) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                fabChart.classList.add('show');
+            } else {
+                fabChart.classList.remove('show');
+            }
+        });
+
+        fabChart.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    // 11. Club Hub Section Tab Switcher
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (tabBtns.length > 0 && tabContents.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+                
+                // Set active class on buttons
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Set active class on content
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `tab-${targetTab}`) {
+                        content.classList.add('active');
+                    }
+                });
+
+                // Trigger Lucide icons update if any new icon renders inside tabs
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            });
+        });
+
+        // Intercept clicks on links pointing to services with data-target-tab
+        document.querySelectorAll('[data-target-tab]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const tabName = this.getAttribute('data-target-tab');
+                const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+                if (targetBtn) {
+                    // Activate the tab
+                    targetBtn.click();
+                }
+            });
         });
     }
 });
