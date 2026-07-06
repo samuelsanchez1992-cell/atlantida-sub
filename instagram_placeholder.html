@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed Placeholder</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-primary: #060e1d;
+            --bg-card: rgba(15, 29, 56, 0.45);
+            --color-white: #ffffff;
+            --color-orange: #f27a18;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --font-body: 'Inter', sans-serif;
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --border-radius-sm: 8px;
+        }
+
+        body {
+            background-color: transparent;
+            color: var(--color-white);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Profile Header */
+        .instagram-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0 16px 0;
+            border-bottom: 1px solid var(--glass-border);
+            margin-bottom: 16px;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .profile-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: 2px solid var(--color-orange);
+            padding: 1.5px;
+            background: #fff;
+        }
+
+        .profile-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--color-white);
+        }
+
+        .profile-handle {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .btn-follow {
+            background: var(--color-orange);
+            color: var(--color-white);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-follow:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Feed Grid */
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .instagram-item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+        }
+
+        .instagram-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        /* Gradient SVG fallback styles in case images fail */
+        .svg-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f1d38 0%, #060e1d 100%);
+            color: var(--text-muted);
+        }
+
+        .svg-fallback svg {
+            width: 24px;
+            height: 24px;
+            opacity: 0.4;
+        }
+
+        /* Overlay on hover */
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 14, 29, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+
+        .instagram-item:hover .instagram-overlay {
+            opacity: 1;
+        }
+
+        .instagram-item:hover .instagram-img {
+            transform: scale(1.08);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .stat-item i, .stat-item svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--color-white);
+        }
+
+        .stat-comments i, .stat-comments svg {
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.5;
+        }
+
+        /* Info Banner at the bottom */
+        .info-banner {
+            margin-top: 14px;
+            padding: 8px 12px;
+            background: rgba(242, 122, 24, 0.08);
+            border: 1px dashed rgba(242, 122, 24, 0.3);
+            border-radius: 6px;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .info-banner svg {
+            flex-shrink: 0;
+            width: 14px;
+            height: 14px;
+            color: var(--color-orange);
+            margin-top: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header info -->
+    <div class="instagram-header">
+        <div class="profile-info">
+            <img src="assets/logo.png" alt="Avatar" class="profile-avatar">
+            <div class="profile-meta">
+                <span class="profile-name">Atlántida Sub</span>
+                <span class="profile-handle">@atlantida_sub</span>
+            </div>
+        </div>
+        <a href="https://www.instagram.com/atlantida_sub/" target="_blank" rel="noopener noreferrer" class="btn-follow">
+            <i data-lucide="instagram"></i>
+            <span>Ver perfil</span>
+        </a>
+    </div>
+
+    <!-- Feed Grid -->
+    <div class="instagram-grid">
+        <!-- Post 1 (Turtle) -->
+        <a href="https://www.instagram.com/atlantida_sub/" target="_blank" class="instagram-item">
+            <img src="assets/insta_1.png" alt="Buceo con Tortugas" class="instagram-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="svg-fallback" style="display: none;">
+                <i data-lucide="image"></i>
+            </div>
+            <div class="instagram-overlay">
+                <div class="stat-item stat-likes"><i data-lucide="heart"></i> 142</div>
+                <div class="stat-item stat-comments"><i data-lucide="message-circle"></i> 12</div>
+            </div>
+        </a>
+
+        <!-- Post 2 (DPV scooter) -->
+        <a href="https://www.instagram.com/atlantida_sub/" target="_blank" class="instagram-item">
+            <img src="assets/insta_2.png" alt="Scooters Suex DPV" class="instagram-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="svg-fallback" style="display: none;">
+                <i data-lucide="image"></i>
+            </div>
+            <div class="instagram-overlay">
+                <div class="stat-item stat-likes"><i data-lucide="heart"></i> 98</div>
+                <div class="stat-item stat-comments"><i data-lucide="message-circle"></i> 8</div>
+            </div>
+        </a>
+
+        <!-- Post 3 (Happy Group) -->
+        <a href="https://www.instagram.com/atlantida_sub/" target="_blank" class="instagram-item">
+            <img src="assets/insta_3.png" alt="Salida de Buceo en Barco" class="instagram-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="svg-fallback" style="display: none;">
+                <i data-lucide="image"></i>
+            </div>
+            <div class="instagram-overlay">
+                <div class="stat-item stat-likes"><i data-lucide="heart"></i> 204</div>
+                <div class="stat-item stat-comments"><i data-lucide="message-circle"></i> 23</div>
+            </div>
+        </a>
+
+        <!-- Post 4 (Moray eel) -->
+        <a href="https://www.instagram.com/atlantida_sub/" target="_blank" class="instagram-item">
+            <img src="assets/insta_4.png" alt="Morena submarina" class="instagram-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="svg-fallback" style="display: none;">
+                <i data-lucide="image"></i>
+            </div>
+            <div class="instagram-overlay">
+                <div class="stat-item stat-likes"><i data-lucide="heart"></i> 115</div>
+                <div class="stat-item stat-comments"><i data-lucide="message-circle"></i> 11</div>
+            </div>
+        </a>
+
+        <!-- Post 5 (Volcanic cave) -->
+        <a href="https://www.instagram.com/atlantida_sub/" target="_blank" class="instagram-item">
+            <img src="assets/insta_5.png" alt="Cueva de las Morenas" class="instagram-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="svg-fallback" style="display: none;">
+                <i data-lucide="image"></i>
+            </div>
+            <div class="instagram-overlay">
+                <div class="stat-item stat-likes"><i data-lucide="heart"></i> 167</div>
+                <div class="stat-item stat-comments"><i data-lucide="message-circle"></i> 19</div>
+            </div>
+        </a>
+
+        <!-- Post 6 (Deep diving) -->
+        <a href="https://www.instagram.com/atlantida_sub/" target="_blank" class="instagram-item">
+            <img src="assets/insta_6.png" alt="Buceo profundo en Tenerife" class="instagram-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="svg-fallback" style="display: none;">
+                <i data-lucide="image"></i>
+            </div>
+            <div class="instagram-overlay">
+                <div class="stat-item stat-likes"><i data-lucide="heart"></i> 133</div>
+                <div class="stat-item stat-comments"><i data-lucide="message-circle"></i> 14</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Instruction box for the user -->
+    <div class="info-banner">
+        <i data-lucide="info"></i>
+        <span><strong>Consejo:</strong> Esta es una previsualización de alta fidelidad. Para mostrar el feed real en vivo, regístrate en Behold.so o LightWidget.com y actualiza el <code>iframe</code> de la web con tu enlace.</span>
+    </div>
+
+    <script>
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

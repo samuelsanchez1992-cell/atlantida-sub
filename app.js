@@ -4,6 +4,68 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
+    // SPA Routing Logic
+    const VALID_PAGES = ['#home', '#about', '#activities', '#services', '#inmersiones', '#pricing', '#contact'];
+    
+    function navigateToPage() {
+        let hash = window.location.hash;
+        
+        // If there's no hash or it's not valid, default to #home
+        if (!hash || !VALID_PAGES.includes(hash)) {
+            hash = '#home';
+        }
+        
+        const targetId = hash.substring(1);
+        const sections = document.querySelectorAll('section');
+        
+        sections.forEach(sec => {
+            if (sec.id === targetId) {
+                sec.classList.remove('hidden-section');
+                
+                // Trigger reveal animations for all elements inside this section immediately
+                const revealElements = sec.querySelectorAll('.reveal');
+                revealElements.forEach(el => el.classList.add('active'));
+            } else {
+                sec.classList.add('hidden-section');
+            }
+        });
+        
+        // Update header active links
+        const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === hash) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // Specific check for #btn-header-join in header (pricing link)
+        const joinBtn = document.getElementById('btn-header-join');
+        if (joinBtn) {
+            if (hash === '#pricing') {
+                joinBtn.classList.add('active');
+            } else {
+                joinBtn.classList.remove('active');
+            }
+        }
+        
+        // Scroll to top of the viewport
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        
+        // Leaflet map refresh when visible
+        if (targetId === 'inmersiones' && window.leafletMap) {
+            setTimeout(() => {
+                window.leafletMap.invalidateSize();
+            }, 200);
+        }
+    }
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', navigateToPage);
+    // Initial page load routing
+    navigateToPage();
+
     // 2. Sticky Header scroll effect
     const header = document.getElementById('header');
     const handleScroll = () => {
@@ -68,27 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    // 5. Active Link Highlight on Scroll
-    const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 150)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href') === `#${current}`) {
-                item.classList.add('active');
-            }
-        });
-    });
+    // 5. Active Link Highlight is now handled dynamically by the SPA Router
 
     // 6. Interactive Bubble Canvas Background
     const canvas = document.getElementById('bubbles-canvas');
@@ -311,24 +353,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. Interactive Bubble Pop effect & Scroll delay
+    // 9. Interactive Bubble Pop effect & SPA Navigation delay
     const chartNodes = document.querySelectorAll('.chart-node');
     chartNodes.forEach(node => {
         node.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
             
             // Add popup pop class
             this.classList.add('pop-effect');
             
-            // Delay to let bubble burst animation play before scrolling
+            // Delay to let bubble burst animation play before navigating
             setTimeout(() => {
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
+                window.location.hash = targetId;
                 
-                // Remove pop class after scroll is triggered
+                // Remove pop class after navigation is triggered
                 setTimeout(() => {
                     this.classList.remove('pop-effect');
                 }, 600);
@@ -336,26 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 10. Floating FAB back-to-chart toggle
-    const fabChart = document.getElementById('fab-back-to-chart');
-    if (fabChart) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                fabChart.classList.add('show');
-            } else {
-                fabChart.classList.remove('show');
-            }
-        });
-
-        fabChart.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    }
+    // 10. Floating FAB back-to-chart is disabled for virtual page navigation
 
     // 11. Club Hub Section Tab Switcher
     const tabBtns = document.querySelectorAll('.tab-btn');
