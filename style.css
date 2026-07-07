@@ -594,6 +594,7 @@ img {
 .centered-hero .hero-subtitle {
     margin-left: auto;
     margin-right: auto;
+    text-align: justify;
 }
 
 .centered-hero .hero-buttons {
