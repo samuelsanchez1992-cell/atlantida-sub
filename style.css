@@ -62,6 +62,7 @@ html {
 }
 
 body {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, #061120 40%, #03080f 80%, #000000 100%);
     background-color: var(--bg-primary);
     color: var(--text-primary);
     font-family: var(--font-body);
@@ -1682,6 +1683,11 @@ img {
 }
 
 @media (max-width: 768px) {
+    .hero-subtitle {
+        text-align: center;
+        text-justify: auto;
+    }
+
     .club-hub-section {
         padding: 60px 0;
     }
@@ -2739,6 +2745,11 @@ img {
 }
 
 @media (max-width: 768px) {
+    .hero-subtitle {
+        text-align: center;
+        text-justify: auto;
+    }
+
     .hero-section {
         padding: calc(var(--header-height) + 15px) 0 20px 0;
         min-height: auto;
@@ -3508,6 +3519,11 @@ img {
 
 /* Responsive adjustment for columns */
 @media (max-width: 768px) {
+    .hero-subtitle {
+        text-align: center;
+        text-justify: auto;
+    }
+
     .formation-dual-layout {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -3524,4 +3540,67 @@ img {
         width: 60px;
         height: 1px;
     }
+}
+
+/* ==========================================================================
+   Aesthetic Diving Details & Animations
+   ========================================================================== */
+/* Wave Shape Divider */
+.custom-shape-divider-bottom {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    z-index: 2;
+}
+
+.custom-shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 40px;
+}
+
+.custom-shape-divider-bottom .shape-fill {
+    fill: var(--bg-dark);
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.node-icon, .about-pill {
+    animation: floatAnimation 5s ease-in-out infinite;
+}
+
+/* Ripple effect on Primary Buttons */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s;
+    opacity: 0;
+    z-index: -1;
+}
+.btn-primary:hover::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
 }
