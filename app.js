@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const scrollY = window.scrollY;
             
             // Show/hide logic
-            if (scrollY > 400) {
+            if (scrollY > 100) {
                 surfaceBtn.classList.remove('hidden');
                 surfaceBtn.classList.add('visible');
             } else {
