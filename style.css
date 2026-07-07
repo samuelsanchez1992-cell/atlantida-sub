@@ -1205,10 +1205,10 @@ img {
 /* Two-column about body */
 .about-two-col {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 40px;
     align-items: center;
-    max-width: 900px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -1254,13 +1254,13 @@ img {
 .about-philosophy .about-intro {
     max-width: none;
     margin: 0;
-    text-align: left;
+    text-align: center;
     font-size: 1rem;
 }
 
 .about-philosophy .about-pill {
-    margin: 0;
-    justify-content: flex-start;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 /* Value list chips */
@@ -1319,6 +1319,7 @@ img {
         text-align: center;
     }
     .about-philosophy .about-pill {
+        margin: 0 auto;
         justify-content: center;
     }
 }
