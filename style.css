@@ -3240,13 +3240,16 @@ img {
 
 .subtab-btn {
     background: transparent;
-    border: none;
+    border: 1px solid transparent;
     outline: none;
     color: var(--text-secondary);
     padding: 8px 16px;
     border-radius: 20px;
-    font-size: 0.82rem;
+    font-family: var(--font-title);
+    font-size: 0.78rem;
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -3259,9 +3262,10 @@ img {
 }
 
 .subtab-btn.active {
-    background: linear-gradient(135deg, var(--color-orange), #f9a832);
-    color: var(--color-white);
-    box-shadow: 0 4px 12px rgba(242, 122, 24, 0.25);
+    background: rgba(242, 122, 24, 0.08);
+    color: var(--color-orange);
+    border-color: rgba(242, 122, 24, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .subtab-btn svg {
