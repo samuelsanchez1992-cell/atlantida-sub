@@ -1792,16 +1792,41 @@ img {
     margin-bottom: 24px;
 }
 
+.pricing-metrics-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    margin: 24px auto 10px;
+    max-width: 600px;
+}
+
+.pricing-metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.pricing-metric-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    align-self: center;
+    flex-shrink: 0;
+}
+
 .price-value {
     display: flex;
     align-items: baseline;
     justify-content: center;
     gap: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .price-number {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: 900;
     color: var(--color-orange);
     font-family: var(--font-title);
@@ -1809,16 +1834,37 @@ img {
     filter: drop-shadow(0 0 15px rgba(242, 122, 24, 0.15));
 }
 
+.price-number-secondary {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--color-white);
+    font-family: var(--font-title);
+    line-height: 1;
+}
+
 .price-period {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.price-period-secondary {
+    font-size: 1.2rem;
     color: var(--text-secondary);
     font-weight: 500;
 }
 
 .price-subtext {
     font-family: var(--font-title);
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     color: var(--color-blue-light);
+    font-weight: 600;
+}
+
+.price-subtext-secondary {
+    font-family: var(--font-title);
+    font-size: 0.88rem;
+    color: var(--text-muted);
     font-weight: 600;
 }
 
@@ -1853,43 +1899,11 @@ img {
     margin: 0;
 }
 
-.pricing-details-grid {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 50px;
-    position: relative;
+.pricing-features-wrapper {
+    max-width: 620px;
+    margin: 0 auto 10px;
     z-index: 1;
-    margin-bottom: 40px;
-    align-items: center;
-}
-
-.pricing-fee-box {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    border-radius: var(--border-radius-md);
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-}
-
-.fee-label {
-    font-family: var(--font-title);
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.fee-cost {
-    font-family: var(--font-title);
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--color-white);
+    position: relative;
 }
 
 .pricing-features-list {
@@ -3501,4 +3515,14 @@ img {
     }
 }
 
-
+/* Responsive pricing metrics */
+@media (max-width: 600px) {
+    .pricing-metrics-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .pricing-metric-divider {
+        width: 60px;
+        height: 1px;
+    }
+}
