@@ -417,4 +417,77 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 12. Interactive Certifications Timeline (Línea de Vida)
+    const timelineSteps = document.querySelectorAll('.timeline-flow-widget .timeline-step');
+    const certTitle = document.getElementById('cert-title');
+    const certLevel = document.getElementById('cert-level');
+    const certDesc = document.getElementById('cert-desc');
+    const certDepth = document.getElementById('cert-depth');
+    const certReqs = document.getElementById('cert-reqs');
+    const certOutcome = document.getElementById('cert-outcome');
+
+    const certData = {
+        bautizo: {
+            title: "Bautizo de Buceo (Discover Scuba)",
+            level: "Iniciación",
+            desc: "Tu primera inmersión. Acompañado de un instructor del club, respirarás bajo el agua por primera vez en un entorno seguro y controlado.",
+            depth: "6 metros",
+            reqs: "Saber nadar",
+            outcome: "Experiencia inicial"
+        },
+        owd: {
+            title: "Open Water Diver (Buceador Autónomo)",
+            level: "Oficial Básico",
+            desc: "El primer curso completo. Aprenderás las bases teóricas y las destrezas de seguridad para bucear de forma autónoma con un compañero en cualquier parte del mundo.",
+            depth: "18 metros",
+            reqs: "Bautizo previo (recomendado)",
+            outcome: "Certificación internacional de por vida"
+        },
+        aowd: {
+            title: "Advanced Open Water Diver",
+            level: "Avanzado / Especialidad",
+            desc: "Expande tus horizontes y confianza. Probarás inmersiones de orientación natural, buceo profundo hasta 30 metros, flotabilidad óptima, nocturno y pecios.",
+            depth: "30 metros",
+            reqs: "Open Water Diver",
+            outcome: "Habilitación para inmersiones profundas y pecios"
+        },
+        rescue: {
+            title: "Rescue Diver (Buceador de Rescate)",
+            level: "Seguridad y Salvamento",
+            desc: "Aprende a anticipar problemas bajo el agua y gestionar emergencias. Practicarás rescates en superficie, primeros auxilios específicos del buceo y suministro de oxígeno.",
+            depth: "30 metros",
+            reqs: "Advanced OWD + Curso EFR (Primeros auxilios)",
+            outcome: "Ser el compañero de buceo más seguro y autosuficiente"
+        },
+        pro: {
+            title: "Divemaster & Instructor del Club",
+            level: "Profesional / Liderazgo",
+            desc: "Lidera y guía inmersiones de socios. Ayuda en la formación de alumnos del club, colabora en salidas en barco e iníciate para impartir cursos si decides ser instructor.",
+            depth: "40 metros",
+            reqs: "Rescue Diver + 60 inmersiones + Seguro profesional",
+            outcome: "Liderar grupos y enseñar en un club sin ánimo de lucro"
+        }
+    };
+
+    if (timelineSteps.length > 0) {
+        timelineSteps.forEach(step => {
+            step.addEventListener('click', () => {
+                timelineSteps.forEach(s => s.classList.remove('active'));
+                step.classList.add('active');
+
+                const certKey = step.getAttribute('data-cert');
+                const data = certData[certKey];
+
+                if (data) {
+                    certTitle.textContent = data.title;
+                    certLevel.textContent = data.level;
+                    certDesc.textContent = data.desc;
+                    certDepth.textContent = data.depth;
+                    certReqs.textContent = data.reqs;
+                    certOutcome.textContent = data.outcome;
+                }
+            });
+        });
+    }
 });

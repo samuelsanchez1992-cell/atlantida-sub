@@ -3219,3 +3219,286 @@ img {
 .contact-link:hover {
     color: #25D366;
 }
+
+/* ==========================================================================
+   Certifications Timeline and Specialties CSS (Inside Formación Tab)
+   ========================================================================== */
+.certifications-timeline-container {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-widget-title {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-white);
+    margin-bottom: 4px;
+    font-family: var(--font-title);
+}
+
+.timeline-widget-subtitle {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.timeline-flow-widget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    max-width: 680px;
+    margin: 0 auto 24px;
+}
+
+.timeline-flow-widget .timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 6px;
+    width: 90px;
+    transition: var(--transition-smooth);
+}
+
+.timeline-flow-widget .step-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-flow-widget .step-circle svg {
+    width: 18px;
+    height: 18px;
+}
+
+.timeline-flow-widget .step-name {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: var(--transition-smooth);
+}
+
+.timeline-connector-widget {
+    flex: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 18px;
+}
+
+/* Hover and Active styles for steps */
+.timeline-flow-widget .timeline-step:hover .step-circle {
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+    background: rgba(242, 122, 24, 0.05);
+}
+
+.timeline-flow-widget .timeline-step:hover .step-name {
+    color: var(--color-white);
+}
+
+.timeline-flow-widget .timeline-step.active .step-circle {
+    background: linear-gradient(135deg, var(--color-orange), #f9a832);
+    border-color: transparent;
+    color: var(--color-white);
+    box-shadow: 0 0 15px rgba(242, 122, 24, 0.4);
+    transform: scale(1.08);
+}
+
+.timeline-flow-widget .timeline-step.active .step-name {
+    color: var(--color-orange);
+    font-weight: 800;
+}
+
+/* Timeline Info Display Box */
+.timeline-detail-box {
+    max-width: 680px;
+    margin: 0 auto 36px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(11, 23, 45, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.detail-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 8px;
+}
+
+.detail-box-header h5 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.cert-pill {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    background: rgba(12, 92, 166, 0.15);
+    border: 1.5px solid rgba(12, 92, 166, 0.35);
+    color: var(--color-blue-light);
+    border-radius: 50px;
+}
+
+.cert-desc-text {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 16px;
+}
+
+.cert-metadata {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.cert-metadata .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.cert-metadata .meta-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+.cert-metadata strong {
+    font-size: 0.8rem;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+/* Specialties Section */
+.specialties-container {
+    margin-top: 36px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.spec-card-widget {
+    background: rgba(11, 23, 45, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    transition: var(--transition-smooth);
+}
+
+.spec-card-widget:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(242, 122, 24, 0.15);
+}
+
+.spec-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(12, 92, 166, 0.08);
+    border: 1px solid rgba(12, 92, 166, 0.15);
+    color: var(--color-blue-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition-smooth);
+}
+
+.spec-icon-box svg {
+    width: 18px;
+    height: 18px;
+}
+
+.spec-card-widget:hover .spec-icon-box {
+    background: rgba(242, 122, 24, 0.1);
+    border-color: rgba(242, 122, 24, 0.25);
+    color: var(--color-orange);
+}
+
+.spec-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.spec-info h5 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0;
+}
+
+.spec-info p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* Responsive styles for Formación widgets */
+@media (max-width: 768px) {
+    .timeline-flow-widget {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+    .timeline-flow-widget .timeline-step {
+        flex-direction: row;
+        width: auto;
+        gap: 16px;
+    }
+    .timeline-flow-widget .step-circle {
+        width: 38px;
+        height: 38px;
+    }
+    .timeline-connector-widget {
+        display: none;
+    }
+    .cert-metadata {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .specialties-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
