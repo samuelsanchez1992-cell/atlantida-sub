@@ -2280,6 +2280,23 @@ img {
 
 /* Specific Highlight Box Colors & Gradients */
 
+
+/* Hours Box */
+.contact-highlight-box.hours-box {
+    background: linear-gradient(45deg, rgba(162, 155, 254, 0.08) 0%, rgba(15, 29, 56, 0.08) 100%);
+    border: 1px solid rgba(162, 155, 254, 0.2);
+    box-shadow: 0 4px 15px rgba(162, 155, 254, 0.03);
+}
+.contact-highlight-box.hours-box .contact-icon {
+    color: #a29bfe;
+}
+.contact-highlight-box.hours-box:hover {
+    background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+    border-color: transparent;
+    box-shadow: 0 10px 25px rgba(162, 155, 254, 0.25);
+    transform: translateY(-3px);
+}
+
 /* WhatsApp Box */
 .contact-highlight-box.whatsapp-box {
     background: linear-gradient(45deg, rgba(37, 211, 102, 0.08) 0%, rgba(15, 29, 56, 0.08) 100%);
