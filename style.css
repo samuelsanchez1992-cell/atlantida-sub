@@ -1254,7 +1254,7 @@ img {
 .about-philosophy .about-intro {
     max-width: none;
     margin: 0;
-    text-align: center;
+    text-align: justify;
     font-size: 1rem;
 }
 
@@ -1265,9 +1265,9 @@ img {
 
 /* Value list chips */
 .about-values-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     margin: 0;
     padding: 0;
 }
@@ -1321,6 +1321,9 @@ img {
     .about-philosophy .about-pill {
         margin: 0 auto;
         justify-content: center;
+    }
+    .about-values-list {
+        grid-template-columns: 1fr;
     }
 }
 
