@@ -492,3 +492,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Back to Surface Depth Gauge Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const surfaceBtn = document.getElementById('back-to-surface');
+    const depthNumber = document.getElementById('depth-number');
+    const maxDepth = 40; // Max depth in meters
+    
+    if (surfaceBtn && depthNumber) {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            // Show/hide logic
+            if (scrollY > 400) {
+                surfaceBtn.classList.remove('hidden');
+                surfaceBtn.classList.add('visible');
+            } else {
+                surfaceBtn.classList.remove('visible');
+                surfaceBtn.classList.add('hidden');
+            }
+            
+            // Calculate fake depth based on scroll percentage
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = Math.min(Math.max(scrollY / scrollHeight, 0), 1);
+            
+            const currentDepth = Math.floor(scrollPercent * maxDepth);
+            depthNumber.textContent = `-${currentDepth}m`;
+        });
+    }
+});
