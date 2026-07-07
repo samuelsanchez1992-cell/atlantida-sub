@@ -335,129 +335,152 @@
                     </div>
 
                     <!-- Tab 2: Formación -->
-                    <div class="tab-content" id="tab-formacion">
-                        <div class="tab-grid">
-                            <div class="tab-illustration">
-                                <!-- SVG Illustration for Formación -->
-                                <svg viewBox="0 0 200 200" class="illustration-svg">
-                                    <defs>
-                                        <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#38bdf8" />
-                                            <stop offset="100%" stop-color="#0c5ca6" />
-                                        </linearGradient>
-                                    </defs>
-                                    <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
-                                    <!-- Badge Shield -->
-                                    <path d="M 70,55 L 130,55 L 130,100 C 130,125 100,145 100,145 C 100,145 70,125 70,100 Z" fill="url(#badgeGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="2.5"/>
-                                    <!-- Star -->
-                                    <polygon points="100,70 105,82 118,82 108,90 112,103 100,95 88,103 92,90 82,82 95,82" fill="#f27a18"/>
-                                    <!-- Graduation line / ribbon -->
-                                    <path d="M 60,110 L 140,110" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="tab-text">
-                                <h3>Cursos de Buceo</h3>
-                                <p>El club cuenta con instructores cualificados que ofrecen todo tipo de formaciones y cursos para todos los niveles.</p>
-                                <ul class="tab-features">
-                                    <li><i data-lucide="check" class="feature-icon"></i> Cursos oficiales (desde bautizos hasta rescue e instructor).</li>
-                                    <li><i data-lucide="check" class="feature-icon"></i> Grupos reducidos enfocado a un aprendizaje real, seguro y personalizado.</li>
-                                </ul>
-                            </div>
+                        <!-- Sub-tab Bar inside Formación -->
+                        <div class="subtab-navigation">
+                            <button class="subtab-btn active" data-subtab="cursos">
+                                <i data-lucide="graduation-cap"></i>
+                                <span>Cursos de Buceo</span>
+                            </button>
+                            <button class="subtab-btn" data-subtab="certificaciones">
+                                <i data-lucide="compass"></i>
+                                <span>Ruta de Certificaciones</span>
+                            </button>
+                            <button class="subtab-btn" data-subtab="especialidades">
+                                <i data-lucide="award"></i>
+                                <span>Especialidades</span>
+                            </button>
                         </div>
 
-                        <!-- Redesigned Compact Formación Layout -->
-                        <div class="formation-dual-layout">
+                        <!-- Sub-tab Contents Wrapper -->
+                        <div class="subtab-content-wrapper">
                             
-                            <!-- Left Column: Vertical Certifications Timeline -->
-                            <div class="formation-left-col">
-                                <h4 class="timeline-widget-title"><i data-lucide="compass" class="title-icon"></i> Ruta de Certificaciones</h4>
-                                <p class="timeline-widget-subtitle">Haz clic en cada paso para ver detalles:</p>
-                                
-                                <div class="vertical-timeline-widget">
-                                    <div class="timeline-v-step active" data-cert="bautizo">
-                                        <div class="step-v-badge">1</div>
-                                        <div class="step-v-text">
-                                            <strong>Bautizo de Buceo</strong>
-                                            <span>Límite: 6 metros</span>
-                                        </div>
+                            <!-- Sub-tab 1: Cursos de Buceo -->
+                            <div class="subtab-content active" id="subtab-cursos">
+                                <div class="tab-grid">
+                                    <div class="tab-illustration">
+                                        <!-- SVG Illustration for Formación -->
+                                        <svg viewBox="0 0 200 200" class="illustration-svg">
+                                            <defs>
+                                                <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                    <stop offset="0%" stop-color="#38bdf8" />
+                                                    <stop offset="100%" stop-color="#0c5ca6" />
+                                                </linearGradient>
+                                            </defs>
+                                            <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+                                            <!-- Badge Shield -->
+                                            <path d="M 70,55 L 130,55 L 130,100 C 130,125 100,145 100,145 C 100,145 70,125 70,100 Z" fill="url(#badgeGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="2.5"/>
+                                            <!-- Star -->
+                                            <polygon points="100,70 105,82 118,82 108,90 112,103 100,95 88,103 92,90 82,82 95,82" fill="#f27a18"/>
+                                            <!-- Graduation line / ribbon -->
+                                            <path d="M 60,110 L 140,110" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+                                        </svg>
                                     </div>
-                                    <div class="timeline-v-connector"></div>
-                                    <div class="timeline-v-step" data-cert="owd">
-                                        <div class="step-v-badge">2</div>
-                                        <div class="step-v-text">
-                                            <strong>Open Water Diver</strong>
-                                            <span>Autónomo (18 metros)</span>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-v-connector"></div>
-                                    <div class="timeline-v-step" data-cert="aowd">
-                                        <div class="step-v-badge">3</div>
-                                        <div class="step-v-text">
-                                            <strong>Advanced OWD</strong>
-                                            <span>Avanzado (30 metros)</span>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-v-connector"></div>
-                                    <div class="timeline-v-step" data-cert="rescue">
-                                        <div class="step-v-badge">4</div>
-                                        <div class="step-v-text">
-                                            <strong>Rescue Diver</strong>
-                                            <span>Seguridad / Rescate</span>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-v-connector"></div>
-                                    <div class="timeline-v-step" data-cert="pro">
-                                        <div class="step-v-badge">5</div>
-                                        <div class="step-v-text">
-                                            <strong>Profesional / Liderazgo</strong>
-                                            <span>Divemaster / Instructor</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Compact detail box below -->
-                                <div class="timeline-v-detail-box glass-panel">
-                                    <h5 id="v-cert-title" class="text-gradient-orange">Bautizo de Buceo (Discover Scuba)</h5>
-                                    <p id="v-cert-desc">Tu primera inmersión. Acompañado de un instructor del club, respirarás bajo el agua por primera vez en un entorno seguro y controlado.</p>
-                                </div>
-                            </div>
-
-                            <!-- Right Column: Specialties Grid -->
-                            <div class="formation-right-col">
-                                <h4 class="timeline-widget-title"><i data-lucide="award" class="title-icon"></i> Especialidades del Club</h4>
-                                <p class="timeline-widget-subtitle">Perfecciona tu técnica y explora nuevos entornos:</p>
-                                
-                                <div class="specs-compact-grid">
-                                    <div class="spec-compact-card glass-panel">
-                                        <div class="spec-compact-icon"><i data-lucide="mountain"></i></div>
-                                        <div class="spec-compact-info">
-                                            <h5>Cuevas / Cavernas</h5>
-                                            <p>Exploración de tubos lávicos con hilo guía y redundancia.</p>
-                                        </div>
-                                    </div>
-                                    <div class="spec-compact-card glass-panel">
-                                        <div class="spec-compact-icon"><i data-lucide="trending-down"></i></div>
-                                        <div class="spec-compact-info">
-                                            <h5>Buceo Profundo</h5>
-                                            <p>Planificación y gestión de inmersiones seguras hasta los 40m.</p>
-                                        </div>
-                                    </div>
-                                    <div class="spec-compact-card glass-panel">
-                                        <div class="spec-compact-icon"><i data-lucide="columns"></i></div>
-                                        <div class="spec-compact-info">
-                                            <h5>Sidemount (Lateral)</h5>
-                                            <p>Botellas laterales para mayor hidrodinámica y comodidad.</p>
-                                        </div>
-                                    </div>
-                                    <div class="spec-compact-card glass-panel">
-                                        <div class="spec-compact-icon"><i data-lucide="heart-handshake"></i></div>
-                                        <div class="spec-compact-info">
-                                            <h5>Buceo Adaptativo</h5>
-                                            <p>Técnicas de soporte para buceadores con diversidad funcional.</p>
-                                        </div>
+                                    <div class="tab-text">
+                                        <h3>Cursos de Buceo</h3>
+                                        <p>El club cuenta con instructores cualificados que ofrecen todo tipo de formaciones y cursos para todos los niveles.</p>
+                                        <ul class="tab-features">
+                                            <li><i data-lucide="check" class="feature-icon"></i> Cursos oficiales (desde bautizos hasta rescue e instructor).</li>
+                                            <li><i data-lucide="check" class="feature-icon"></i> Grupos reducidos enfocado a un aprendizaje real, seguro y personalizado.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Sub-tab 2: Ruta de Certificaciones -->
+                            <div class="subtab-content" id="subtab-certificaciones">
+                                <div class="formation-left-col max-w-timeline">
+                                    <h4 class="timeline-widget-title"><i data-lucide="compass" class="title-icon"></i> Ruta de Certificaciones</h4>
+                                    <p class="timeline-widget-subtitle">Haz clic en cada paso para ver detalles:</p>
+                                    
+                                    <div class="vertical-timeline-widget">
+                                        <div class="timeline-v-step active" data-cert="bautizo">
+                                            <div class="step-v-badge">1</div>
+                                            <div class="step-v-text">
+                                                <strong>Bautizo de Buceo</strong>
+                                                <span>Límite: 6 metros</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-v-connector"></div>
+                                        <div class="timeline-v-step" data-cert="owd">
+                                            <div class="step-v-badge">2</div>
+                                            <div class="step-v-text">
+                                                <strong>Open Water Diver</strong>
+                                                <span>Autónomo (18 metros)</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-v-connector"></div>
+                                        <div class="timeline-v-step" data-cert="aowd">
+                                            <div class="step-v-badge">3</div>
+                                            <div class="step-v-text">
+                                                <strong>Advanced OWD</strong>
+                                                <span>Avanzado (30 metros)</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-v-connector"></div>
+                                        <div class="timeline-v-step" data-cert="rescue">
+                                            <div class="step-v-badge">4</div>
+                                            <div class="step-v-text">
+                                                <strong>Rescue Diver</strong>
+                                                <span>Seguridad / Rescate</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-v-connector"></div>
+                                        <div class="timeline-v-step" data-cert="pro">
+                                            <div class="step-v-badge">5</div>
+                                            <div class="step-v-text">
+                                                <strong>Profesional / Liderazgo</strong>
+                                                <span>Divemaster / Instructor</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Compact detail box below -->
+                                    <div class="timeline-v-detail-box glass-panel">
+                                        <h5 id="v-cert-title" class="text-gradient-orange">Bautizo de Buceo (Discover Scuba)</h5>
+                                        <p id="v-cert-desc">Tu primera inmersión. Acompañado de un instructor del club, respirarás bajo el agua por primera vez en un entorno seguro y controlado.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sub-tab 3: Especialidades -->
+                            <div class="subtab-content" id="subtab-especialidades">
+                                <div class="formation-right-col max-w-specs">
+                                    <h4 class="timeline-widget-title"><i data-lucide="award" class="title-icon"></i> Especialidades del Club</h4>
+                                    <p class="timeline-widget-subtitle">Perfecciona tu técnica y explora nuevos entornos:</p>
+                                    
+                                    <div class="specs-compact-grid">
+                                        <div class="spec-compact-card glass-panel">
+                                            <div class="spec-compact-icon"><i data-lucide="mountain"></i></div>
+                                            <div class="spec-compact-info">
+                                                <h5>Cuevas / Cavernas</h5>
+                                                <p>Exploración de tubos lávicos con hilo guía y redundancia.</p>
+                                            </div>
+                                        </div>
+                                        <div class="spec-compact-card glass-panel">
+                                            <div class="spec-compact-icon"><i data-lucide="trending-down"></i></div>
+                                            <div class="spec-compact-info">
+                                                <h5>Buceo Profundo</h5>
+                                                <p>Planificación y gestión de inmersiones seguras hasta los 40m.</p>
+                                            </div>
+                                        </div>
+                                        <div class="spec-compact-card glass-panel">
+                                            <div class="spec-compact-icon"><i data-lucide="columns"></i></div>
+                                            <div class="spec-compact-info">
+                                                <h5>Sidemount (Lateral)</h5>
+                                                <p>Botellas laterales para mayor hidrodinámica y comodidad.</p>
+                                            </div>
+                                        </div>
+                                        <div class="spec-compact-card glass-panel">
+                                            <div class="spec-compact-icon"><i data-lucide="heart-handshake"></i></div>
+                                            <div class="spec-compact-info">
+                                                <h5>Buceo Adaptativo</h5>
+                                                <p>Técnicas de soporte para buceadores con diversidad funcional.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

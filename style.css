@@ -3224,13 +3224,69 @@ img {
 /* ==========================================================================
    Certifications Timeline and Specialties CSS (Inside Formación Tab)
    ========================================================================== */
-.formation-dual-layout {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 32px;
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+.subtab-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 6px;
+    border-radius: 30px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.subtab-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
+}
+
+.subtab-btn:hover {
+    color: var(--color-white);
+}
+
+.subtab-btn.active {
+    background: linear-gradient(135deg, var(--color-orange), #f9a832);
+    color: var(--color-white);
+    box-shadow: 0 4px 12px rgba(242, 122, 24, 0.25);
+}
+
+.subtab-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Subtab Content Toggling */
+.subtab-content {
+    display: none;
+}
+
+.subtab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.max-w-timeline {
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.max-w-specs {
+    max-width: 680px;
+    margin: 0 auto;
 }
 
 .timeline-widget-title {

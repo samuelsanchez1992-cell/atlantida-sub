@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         pro: {
             title: "Divemaster & Instructor del Club",
-            desc: "Lidera salidas y apoya en la instrucción. Guía inmersiones oficiales de socios y fórmate para enseñar en el club sin ánimo de lucro."
+            desc: "Lidera salidas y apoya en la instrucción. Guía inmersiones oficiales y fórmate para enseñar."
         }
     };
 
@@ -458,6 +458,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data) {
                     vCertTitle.textContent = data.title;
                     vCertDesc.textContent = data.desc;
+                }
+            });
+        });
+    }
+
+    // 13. Sub-tabs Switcher inside Formación Tab
+    const subtabBtns = document.querySelectorAll('.subtab-btn');
+    const subtabContents = document.querySelectorAll('.subtab-content');
+
+    if (subtabBtns.length > 0 && subtabContents.length > 0) {
+        subtabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetSubtab = btn.getAttribute('data-subtab');
+
+                // Toggle active button state
+                subtabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Toggle active content state
+                subtabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === `subtab-${targetSubtab}`) {
+                        content.classList.add('active');
+                    }
+                });
+
+                // Update Lucide icons if any new ones render inside subtabs
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
                 }
             });
         });
