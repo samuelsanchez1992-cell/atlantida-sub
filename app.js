@@ -500,11 +500,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxDepth = 40; // Max depth in meters
     
     if (surfaceBtn && depthNumber) {
+        // Show/hide logic and depth gauge calculation on scroll
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             
-            // Show/hide logic
-            if (scrollY > 100) {
+            // Show only if we scrolled past 40% of the viewport (i.e. leaving the hero section)
+            if (scrollY > window.innerHeight * 0.4) {
                 surfaceBtn.classList.remove('hidden');
                 surfaceBtn.classList.add('visible');
             } else {
@@ -514,10 +515,24 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Calculate fake depth based on scroll percentage
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = Math.min(Math.max(scrollY / scrollHeight, 0), 1);
+            const scrollPercent = scrollHeight > 0 ? Math.min(Math.max(scrollY / scrollHeight, 0), 1) : 0;
             
             const currentDepth = Math.floor(scrollPercent * maxDepth);
             depthNumber.textContent = `-${currentDepth}m`;
+        });
+
+        // Click handler to go up and change text temporarily
+        surfaceBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const textSpan = surfaceBtn.querySelector('.surface-text');
+            if (textSpan) textSpan.textContent = 'Subiendo a superficie...';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Revert the text after 1.5 seconds when presumably the scroll is finished
+            setTimeout(() => {
+                if (textSpan) textSpan.textContent = 'Volver a la superficie';
+            }, 1500);
         });
     }
 });

@@ -3717,6 +3717,11 @@ img {
         padding: 8px 12px 8px 8px;
     }
     .surface-text {
-        display: none;
+        font-size: 0.75rem;
+    }
+    .surface-gauge {
+        width: 32px;
+        height: 32px;
+        font-size: 0.65rem;
     }
 }
