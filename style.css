@@ -1822,11 +1822,11 @@ img {
     align-items: baseline;
     justify-content: center;
     gap: 4px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
 }
 
 .price-number {
-    font-size: 3.5rem;
+    font-size: 4.2rem;
     font-weight: 900;
     color: var(--color-orange);
     font-family: var(--font-title);
@@ -1834,38 +1834,31 @@ img {
     filter: drop-shadow(0 0 15px rgba(242, 122, 24, 0.15));
 }
 
-.price-number-secondary {
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: var(--color-white);
-    font-family: var(--font-title);
-    line-height: 1;
-}
-
 .price-period {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-.price-period-secondary {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-secondary);
     font-weight: 500;
 }
 
 .price-subtext {
     font-family: var(--font-title);
-    font-size: 0.88rem;
+    font-size: 0.92rem;
     color: var(--color-blue-light);
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.price-subtext-secondary {
-    font-family: var(--font-title);
-    font-size: 0.88rem;
+.price-dot {
+    margin: 0 8px;
+    color: rgba(255, 255, 255, 0.15);
+}
+
+.price-initial-fee {
     color: var(--text-muted);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* Couple Discount Promo Card */
