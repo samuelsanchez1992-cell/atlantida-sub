@@ -3742,3 +3742,24 @@ img {
         margin-bottom: 14px !important;
     }
 }
+
+@media (max-width: 768px) {
+    .about-stat-hero {
+        padding: 16px 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-stat-hero {
+        padding: 12px 16px !important;
+    }
+    .about-stat-hero-number {
+        font-size: 2.8rem !important;
+    }
+    .about-stat-hero-label {
+        font-size: 0.8rem !important;
+    }
+    .about-stat-hero-sub {
+        font-size: 0.72rem !important;
+    }
+}
