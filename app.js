@@ -504,7 +504,14 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             
-            // The button is always visible, no hide/show logic needed
+            // Show only if we scrolled past 40% of the viewport (i.e. leaving the hero section)
+            if (scrollY > window.innerHeight * 0.4) {
+                surfaceBtn.classList.remove('hidden');
+                surfaceBtn.classList.add('visible');
+            } else {
+                surfaceBtn.classList.remove('visible');
+                surfaceBtn.classList.add('hidden');
+            }
             
             // Calculate fake depth based on scroll percentage
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
