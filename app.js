@@ -493,25 +493,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 // Back to Surface Depth Gauge Logic
 document.addEventListener('DOMContentLoaded', () => {
     const surfaceBtn = document.getElementById('back-to-surface');
-    const depthNumber = document.getElementById('depth-number');
-    const maxDepth = 40; // Max depth in meters
-    
-    if (surfaceBtn && depthNumber) {
-        
-        // 1. Visibility logic based on Hero Section presence (not scroll amount)
+
+    if (surfaceBtn) {
+        // 1. Visibility logic based on Hero Section presence
         const heroSection = document.querySelector('.hero-section');
         if (heroSection) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    // If the hero section is visible, we are in the 'portada' -> hide button
                     if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
                         surfaceBtn.classList.remove('visible');
                         surfaceBtn.classList.add('hidden');
                     } else {
-                        // Anywhere else in the web -> show button
                         surfaceBtn.classList.remove('hidden');
                         surfaceBtn.classList.add('visible');
                     }
@@ -520,25 +516,15 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(heroSection);
         }
 
-        // 2. Depth gauge logic still tied to scroll for fun effect
-        window.addEventListener('scroll', () => {
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = scrollHeight > 0 ? Math.min(Math.max(window.scrollY / scrollHeight, 0), 1) : 0;
-            const currentDepth = Math.floor(scrollPercent * maxDepth);
-            depthNumber.textContent = `-${currentDepth}m`;
-        });
-
-        // 3. Click handler to return to the cover page (portada)
+        // 3. Click handler to return to the cover page
         surfaceBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const textSpan = surfaceBtn.querySelector('.surface-text');
             if (textSpan) textSpan.textContent = 'Subiendo a superficie...';
             
-            // To simulate returning to the 'initial page' instead of just scrolling up,
-            // we remove the hash and reload the top of the page.
             setTimeout(() => {
                 window.location.href = 'index.html';
-            }, 600); // 600ms delay to see the text before redirecting
+            }, 600);
         });
     }
 });

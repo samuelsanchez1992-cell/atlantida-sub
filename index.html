@@ -37,7 +37,7 @@
                 <a href="#about" class="nav-link" id="link-about">Familia Atlántida</a>
                 <a href="#activities" class="nav-link" id="link-activities">Actividades y Formación</a>
                 <a href="#services" class="nav-link" id="link-services">Servicios</a>
-                <a href="#inmersiones" class="nav-link" id="link-inmersiones">Mapa de Inmersiones</a>
+                <a href="#inmersiones" class="nav-link" id="link-inmersiones">Puntos de buceo</a>
                 <a href="#contact" class="nav-link" id="link-contact">Contacto</a>
             </nav>
 
@@ -90,7 +90,7 @@
                     <!-- Floating Nodes (6 nodes as links) -->
                     <a href="#about" class="chart-node node-1 glass-panel" data-index="1">
                         <!-- Hug / embrace icon: two figures hugging each other -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="node-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="node-icon" style="width: 38px !important; height: 38px !important; margin-bottom: 6px;">
                             <!-- Left person head -->
                             <circle cx="14" cy="6" r="5"/>
                             <!-- Right person head -->
@@ -113,40 +113,21 @@
                     </a>
 
                     <a href="#services" class="chart-node node-2 glass-panel" data-index="2">
-                        <!-- Scuba tank icon — bold outline style matching reference image -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="node-icon node-icon-tall">
-
-                            <!-- Bottom dome -->
-                            <path d="M10 56 Q20 63 30 56"/>
-
-                            <!-- Main cylinder body -->
-                            <line x1="10" y1="56" x2="10" y2="18"/>
-                            <line x1="30" y1="56" x2="30" y2="18"/>
-
-                            <!-- Top dome / shoulder -->
-                            <path d="M10 18 Q20 10 30 18"/>
-
-                            <!-- Neck -->
-                            <rect x="15" y="7" width="10" height="11" rx="2.5"/>
-
-                            <!-- Valve T-bar -->
-                            <line x1="8" y1="8" x2="32" y2="8" stroke-width="3.5"/>
-                            <!-- Valve post center -->
-                            <line x1="20" y1="4" x2="20" y2="8"/>
-                            <!-- Small valve wheel -->
-                            <circle cx="20" cy="4" r="3" stroke-width="2"/>
-
-                            <!-- Pressure band 1 (top) -->
-                            <rect x="10" y="23" width="20" height="4" rx="1" fill="currentColor" fill-opacity="0.25" stroke-width="1.5"/>
-
-                            <!-- Pressure band 2 (bottom) -->
-                            <rect x="10" y="44" width="20" height="4" rx="1" fill="currentColor" fill-opacity="0.25" stroke-width="1.5"/>
-
-                            <!-- Regulator hose (right side) -->
-                            <path d="M30 22 Q38 22 38 30 Q38 38 32 40" stroke-width="2.5"/>
-                            <!-- Regulator head -->
-                            <circle cx="31" cy="41" r="4" stroke-width="2.5"/>
-
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="var(--color-orange)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" class="node-icon" style="opacity: 0.85; width: 38px !important; height: 38px !important; margin-bottom: 6px;">
+                            <!-- Scuba Cylinder (Left side) -->
+                            <rect x="10" y="22" width="14" height="32" rx="4" fill="rgba(242, 122, 24, 0.15)"/>
+                            <rect x="15" y="16" width="4" height="6" fill="rgba(242, 122, 24, 0.15)"/>
+                            <circle cx="17" cy="14" r="2.5"/>
+                            
+                            <!-- Pressure Gauge / Manometer (Right side) -->
+                            <circle cx="44" cy="28" r="14" fill="rgba(242, 122, 24, 0.05)"/>
+                            <circle cx="44" cy="28" r="11"/>
+                            <!-- Red needle pointing to 200 BAR -->
+                            <line x1="44" y1="28" x2="44" y2="19" stroke="var(--color-orange)" stroke-width="2.5"/>
+                            <!-- Gauge Hose -->
+                            <path d="M 44,42 Q 44,52 32,52 Q 22,52 20,44" fill="none"/>
+                            <!-- Label "200" -->
+                            <text x="44" y="37" font-size="5" font-family="sans-serif" font-weight="bold" fill="var(--color-orange)" stroke="none" text-anchor="middle">200 BAR</text>
                         </svg>
                         <span class="node-text">Servicios</span>
                         <p class="node-desc">Estación de carga Aire/<span class="nitrox-badge-text">Nitrox</span>, alquiler de scooters DPV y alquiler de equipos.</p>
@@ -159,35 +140,35 @@
                     </a>
 
                     <a href="#contact" class="chart-node node-4 glass-panel" data-index="4">
-                        <i data-lucide="map-pin" class="node-icon"></i>
+                        <i data-lucide="map-pin" class="node-icon" style="width: 34px !important; height: 34px !important; margin-bottom: 6px;"></i>
                         <span class="node-text">Contacto</span>
                         <p class="node-desc">Encuentra nuestra sede en Santa Cruz de Tenerife.</p>
                     </a>
 
                     <a href="#pricing" class="chart-node node-5 glass-panel" data-index="5">
-                        <!-- Waving hand + heart icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="node-icon">
-                            <!-- Palm base -->
-                            <path d="M14 28 Q10 22 10 16 Q10 11 14 10 Q18 9 18 14 L18 22"/>
-                            <!-- Index finger -->
-                            <path d="M18 14 Q18 8 22 8 Q26 8 26 14 L26 22"/>
-                            <!-- Middle finger -->
-                            <path d="M26 15 Q26 9 30 9 Q34 9 34 15 L34 24"/>
-                            <!-- Ring finger -->
-                            <path d="M34 18 Q34 13 37 13 Q40 13 40 18 L40 26"/>
-                            <!-- Palm bottom and wrist -->
-                            <path d="M14 28 Q13 34 15 38 Q18 42 24 42 Q32 42 36 38 L40 26"/>
-                            <!-- Thumb -->
-                            <path d="M14 22 Q10 20 9 24 Q8 28 12 30 L14 30"/>
-                            <!-- Heart floating above -->
-                            <path d="M33 6 C33 4, 30 2, 30 4.5 C30 7, 33 10, 33 10 C33 10, 36 7, 36 4.5 C36 2, 33 4, 33 6Z" fill="currentColor" stroke="none" opacity="0.85"/>
+                        <!-- Person holding a sign with a heart -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="node-icon" style="width: 40px !important; height: 40px !important; margin-bottom: 6px;">
+                            <!-- Person Head -->
+                            <circle cx="20" cy="24" r="6"/>
+                            <!-- Person Body -->
+                            <line x1="20" y1="30" x2="20" y2="46"/>
+                            <!-- Legs -->
+                            <path d="M12 58 L20 46 L28 58"/>
+                            <!-- Arms holding sign -->
+                            <path d="M20 34 L30 38 L38 38"/>
+                            <!-- The sign board -->
+                            <rect x="34" y="10" width="24" height="18" rx="2" fill="currentColor" fill-opacity="0.1"/>
+                            <!-- Stick -->
+                            <line x1="46" y1="28" x2="46" y2="58"/>
+                            <!-- Hearts on the sign -->
+                            <path d="M46 14 C42 14, 40 17, 42 19 L46 23 L50 19 C52 17, 50 14, 46 14Z" fill="currentColor" stroke="none" opacity="0.9"/>
                         </svg>
                         <span class="node-text">Únete</span>
                         <p class="node-desc">Hazte socio de Atlántida Sub para disfrutar del mar de forma muy económica.</p>
                     </a>
 
                     <a href="#inmersiones" class="chart-node node-6 glass-panel" data-index="6">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="node-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="node-icon" style="width: 36px !important; height: 36px !important; margin-bottom: 6px;">
                             <!-- Folded Map Outline -->
                             <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z" />
                             <!-- Map grid/coordinate wave lines -->
@@ -196,7 +177,7 @@
                             <path d="M11 8h4.5l-1.5 3h-3z" fill="currentColor" opacity="0.9" />
                             <line x1="11" y1="8" x2="11" y2="14" />
                         </svg>
-                        <span class="node-text">Mapa de Inmersiones</span>
+                        <span class="node-text">Puntos de buceo</span>
                         <p class="node-desc">Explora el mapa de inmersiones de la isla.</p>
                     </a>
                 </div>
@@ -283,7 +264,7 @@
     <section class="club-hub-section" id="activities">
         <div class="container">
             <div class="section-header reveal">
-                <h2 class="section-title">Actividades y Formación</h2>
+                <span class="section-tag" style="display: inline-block; margin-bottom: 12px;">Actividades y Formación</span>
                 <p class="section-subtitle">
                     Disfruta del buceo y fórmate con instructores cualificados del propio club.
                 </p>
@@ -507,8 +488,16 @@
                 <!-- Service 1: Cargas (with NITROX badge!) -->
                 <div class="service-card-new glass-panel nitrox-card">
                     <div class="nitrox-badge-container">
+                        <!-- Compressed Air Logo -->
+                        <svg viewBox="0 0 120 120" class="nitrox-badge-svg" style="width: 100%; height: 100%; margin-bottom: -35%; z-index: 1; position: relative;">
+                            <circle cx="60" cy="60" r="52" fill="#ffffff" stroke="#0ea5e9" stroke-width="8"/>
+                            <circle cx="60" cy="60" r="42" fill="#0ea5e9" />
+                            <text x="60" y="68" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="#ffffff" text-anchor="middle" letter-spacing="1">AIR</text>
+                            <text x="60" y="40" font-family="'Outfit', sans-serif" font-weight="800" font-size="7" fill="#ffffff" text-anchor="middle">AIRE COMPRIMIDO</text>
+                            <text x="60" y="88" font-family="'Outfit', sans-serif" font-weight="800" font-size="9" fill="#ffffff" text-anchor="middle">21% O2</text>
+                        </svg>
                         <!-- Enriched Air Nitrox Logo -->
-                        <svg viewBox="0 0 120 120" class="nitrox-badge-svg">
+                        <svg viewBox="0 0 120 120" class="nitrox-badge-svg" style="width: 100%; height: 100%; z-index: 2; position: relative;">
                             <circle cx="60" cy="60" r="52" fill="#eab308" stroke="#166534" stroke-width="8"/>
                             <text x="60" y="68" font-family="'Outfit', sans-serif" font-weight="900" font-size="20" fill="#166534" text-anchor="middle" letter-spacing="1">NITROX</text>
                             <text x="60" y="42" font-family="'Outfit', sans-serif" font-weight="800" font-size="7" fill="#166534" text-anchor="middle">AIRE ENRIQUECIDO</text>
@@ -517,7 +506,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Carga de Botellas</h3>
-                        <p>AIRE / <span class="nitrox-badge-text">NITROX</span></p>
+                        <p>Cargamos diariamente <span class="aire-badge-text">AIRE</span> Y <span class="nitrox-badge-text">NITROX</span> para las botellas de nuestros socios</p>
                     </div>
                 </div>
 
@@ -543,7 +532,11 @@
                     </div>
                     <div class="service-content">
                         <h3>Alquiler de Botellas</h3>
-                        <p>Acero y aluminio / 12 y 15L</p>
+                        <p style="line-height: 1.6;">
+                            &bull; Acero y aluminio<br>
+                            &bull; <span class="aire-badge-text">AIRE</span>/<span class="nitrox-badge-text">NITROX</span><br>
+                            &bull; 8L, 12L y 15L
+                        </p>
                     </div>
                 </div>
 
@@ -601,6 +594,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Alquiler de Scooters DPV</h3>
+                        <p>Amplía la distancia recorrida de tus inmersiones y bucea motorizado!</p>
                     </div>
                 </div>
             </div>
@@ -612,7 +606,6 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-tag">Membresía</span>
-                <h2 class="section-title">Forma Parte de Atlántida Sub</h2>
             </div>
 
             <div class="pricing-container reveal">
@@ -675,7 +668,7 @@
     <section class="map-section" id="inmersiones">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-tag">Zonas de Inmersión</span>
+                <span class="section-tag">Puntos de buceo</span>
                 <h2 class="section-title">Buceo en Tenerife</h2>
                 <p class="section-subtitle">
                     Explora los puntos de buceo más destacados de la isla que visitamos habitualmente.
@@ -969,11 +962,10 @@
 
     <!-- Back to Surface Button -->
     <a href="#" id="back-to-surface" class="back-to-surface hidden" aria-label="Volver a la superficie">
-        <div class="surface-gauge" title="Profundímetro">
-            <span id="depth-number">0m</span>
+        <div class="surface-gauge" style="display: flex; justify-content: center; align-items: center;" title="Ascenso a superficie">
+            <i data-lucide="thumbs-up" class="thumb-ascend" style="width: 24px; height: 24px;"></i>
         </div>
         <div class="surface-action">
-            <i data-lucide="arrow-up" class="surface-arrow"></i>
             <span class="surface-text">Volver a la superficie</span>
         </div>
     </a>
