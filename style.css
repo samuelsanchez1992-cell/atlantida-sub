@@ -3763,3 +3763,20 @@ img {
         font-size: 0.72rem !important;
     }
 }
+
+@media (max-width: 768px) {
+    .map-section .section-header {
+        margin-bottom: 24px !important;
+    }
+    .leaflet-map-wrapper {
+        margin-top: 10px !important;
+    }
+}
+@media (max-width: 480px) {
+    .map-section .section-header {
+        margin-bottom: 12px !important;
+    }
+    .leaflet-map-wrapper {
+        margin-top: 0 !important;
+    }
+}
