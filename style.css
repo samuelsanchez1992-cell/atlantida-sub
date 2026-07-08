@@ -199,14 +199,14 @@ img {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
+    display: inline;
 }
 
 .text-gradient-orange {
     background: var(--gradient-orange);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
+    display: inline;
 }
 
 .highlight-orange {
