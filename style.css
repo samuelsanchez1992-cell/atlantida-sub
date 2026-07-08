@@ -2788,6 +2788,7 @@ img {
         letter-spacing: -0.5px;
     }
     
+    .centered-hero .hero-subtitle,
     .hero-subtitle {
         font-size: 1.1rem;
         text-align: center;
