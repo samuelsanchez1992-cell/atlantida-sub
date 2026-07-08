@@ -3817,3 +3817,14 @@ img {
         padding-bottom: 20px !important;
     }
 }
+
+@media (max-width: 768px) {
+    .service-card-new {
+        padding: 20px 16px !important;
+    }
+}
+@media (max-width: 480px) {
+    .service-card-new {
+        padding: 12px 14px !important;
+    }
+}
