@@ -3712,6 +3712,7 @@ img {
     }
 }
 
+
 #about-title {
     font-size: 2.2rem;
     line-height: 1.3;
@@ -3719,12 +3720,25 @@ img {
 
 @media (max-width: 768px) {
     #about-title {
-        font-size: 1.6rem;
+        font-size: 1.45rem;
+    }
+    .about-stats-hero {
+        margin: 20px auto 24px !important;
     }
 }
 
 @media (max-width: 480px) {
     #about-title {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        line-height: 1.15;
+    }
+    .about-stats-hero {
+        margin: 12px auto 16px !important;
+    }
+    .about-philosophy .about-intro {
+        margin-bottom: 10px !important;
+    }
+    .about-philosophy .about-pill {
+        margin-bottom: 14px !important;
     }
 }
