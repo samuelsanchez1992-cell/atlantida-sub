@@ -3783,11 +3783,11 @@ img {
 
 @media (max-width: 768px) {
     .map-section {
-        padding: 60px 0 !important;
+        padding-top: calc(var(--header-height) + 20px) !important; padding-bottom: 20px !important;
     }
 }
 @media (max-width: 480px) {
     .map-section {
-        padding: 40px 0 !important;
+        padding-top: calc(var(--header-height) + 10px) !important; padding-bottom: 15px !important;
     }
 }
