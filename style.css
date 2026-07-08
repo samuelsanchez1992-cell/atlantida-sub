@@ -770,7 +770,7 @@ img {
 }
 
 .center-logo {
-    width: 75%;
+    width: 95%;
     height: auto;
     filter: drop-shadow(0 0 8px rgba(242, 122, 24, 0.5))
             drop-shadow(0 0 16px rgba(56, 189, 248, 0.3));
@@ -2768,7 +2768,6 @@ img {
 @media (max-width: 768px) {
     .hero-subtitle {
         text-align: center;
-        text-justify: auto;
     }
 
     .hero-section {
@@ -2791,7 +2790,7 @@ img {
     
     .hero-subtitle {
         font-size: 1.1rem;
-        text-align: justify;
+        text-align: center;
     }
 
     .hero-chart {
