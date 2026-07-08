@@ -3780,3 +3780,14 @@ img {
         margin-top: 0 !important;
     }
 }
+
+@media (max-width: 768px) {
+    .map-section {
+        padding: 60px 0 !important;
+    }
+}
+@media (max-width: 480px) {
+    .map-section {
+        padding: 40px 0 !important;
+    }
+}
