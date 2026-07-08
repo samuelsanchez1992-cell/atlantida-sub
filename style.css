@@ -3711,3 +3711,20 @@ img {
         font-size: 0.65rem;
     }
 }
+
+#about-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+    #about-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #about-title {
+        font-size: 1.4rem;
+    }
+}
