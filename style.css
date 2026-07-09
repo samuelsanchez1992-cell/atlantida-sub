@@ -868,12 +868,18 @@ img {
 }
 
 /* Individual node positioning using percentage coordinates from 480x480 container */
-.node-1 { top: 14.58%; left: 50%; border-color: rgba(56, 189, 248, 0.5); animation: float1 7s infinite ease-in-out; }
-.node-2 { top: 32.29%; left: 80.63%; border-color: rgba(242, 122, 24, 0.5); animation: float2 6s infinite ease-in-out; }
-.node-3 { top: 67.71%; left: 80.63%; border-color: rgba(56, 189, 248, 0.5); animation: float3 8s infinite ease-in-out; }
-.node-4 { top: 85.42%; left: 50%; border-color: rgba(242, 122, 24, 0.5); animation: float4 6.5s infinite ease-in-out; }
-.node-5 { top: 67.71%; left: 19.38%; border-color: rgba(56, 189, 248, 0.5); animation: float5 7.5s infinite ease-in-out; }
-.node-6 { top: 32.29%; left: 19.38%; border-color: rgba(242, 122, 24, 0.5); animation: float6 7s infinite ease-in-out; }
+.node-1 { top: 14.58%; left: 50.00%; border-color: rgba(56, 189, 248, 0.5); animation: float1 7s infinite ease-in-out; }
+.node-2 { top: 27.92%; left: 77.69%; border-color: rgba(242, 122, 24, 0.5); animation: float2 6s infinite ease-in-out; }
+.node-3 { top: 57.88%; left: 84.53%; border-color: rgba(56, 189, 248, 0.5); animation: float3 8s infinite ease-in-out; }
+.node-4 { top: 81.91%; left: 65.37%; border-color: rgba(242, 122, 24, 0.5); animation: float4 6.5s infinite ease-in-out; }
+.node-5 { top: 81.91%; left: 34.63%; border-color: rgba(56, 189, 248, 0.5); animation: float5 7.5s infinite ease-in-out; }
+.node-6 { top: 57.88%; left: 15.47%; border-color: rgba(242, 122, 24, 0.5); animation: float6 7s infinite ease-in-out; }
+.node-7 { top: 27.92%; left: 22.31%; border-color: rgba(56, 189, 248, 0.5); animation: float7 7.2s infinite ease-in-out; }
+
+
+
+
+
 
 /* Node Icon styling */
 .chart-node .node-icon {
@@ -3794,8 +3800,8 @@ img {
 
 /* NITROX text inline badge */
 .nitrox-badge-text {
-    background-color: var(--color-orange);
-    color: #ffffff !important;
+    background-color: #15803d;
+    color: #fde047 !important;
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 900;
@@ -4154,4 +4160,10 @@ img {
 }
 .back-to-surface.visible {
     transform: translateX(-50%) translateY(0) scale(1) !important;
+}
+
+@keyframes float7 {
+    0% { transform: translate(-50%, -50%) translateY(0); }
+    50% { transform: translate(-50%, -50%) translateY(-18px); }
+    100% { transform: translate(-50%, -50%) translateY(0); }
 }
