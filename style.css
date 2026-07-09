@@ -883,8 +883,8 @@ img {
 
 /* Node Icon styling */
 .chart-node .node-icon {
-    width: clamp(18px, 3.2vw, 22px);
-    height: clamp(18px, 3.2vw, 22px);
+    width: clamp(16px, 2.8vw, 19px);
+    height: clamp(16px, 2.8vw, 19px);
     color: var(--color-blue-light);
     margin-bottom: 3px;
     flex-shrink: 0;
@@ -919,7 +919,7 @@ img {
 }
 
 .chart-node .node-text {
-    font-size: clamp(0.58rem, 1.15vw, 0.66rem);
+    font-size: clamp(0.52rem, 1vw, 0.58rem);
     font-weight: 800;
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.1;
@@ -2881,8 +2881,8 @@ img {
     }
 
     .chart-node .node-icon {
-        width: clamp(16px, 4vw, 20px);
-        height: clamp(16px, 4vw, 20px);
+        width: clamp(14px, 3.5vw, 18px);
+        height: clamp(14px, 3.5vw, 18px);
     }
 
     .node-icon-wide,
@@ -2891,7 +2891,7 @@ img {
     }
 
     .chart-node .node-text {
-        font-size: 0.58rem;
+        font-size: 0.52rem;
     }
 
     .chart-node:hover {
@@ -4166,4 +4166,46 @@ img {
     0% { transform: translate(-50%, -50%) translateY(0); }
     50% { transform: translate(-50%, -50%) translateY(-18px); }
     100% { transform: translate(-50%, -50%) translateY(0); }
+}
+
+.login-header-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    background: rgba(56, 189, 248, 0.03);
+    color: var(--color-blue-light);
+    transition: var(--transition-smooth);
+    margin: 0 4px;
+}
+.login-header-link i,
+.login-header-link svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+.login-header-link:hover {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
+    transform: translateY(-2px) scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .header-actions {
+        gap: 6px !important;
+    }
+    .instagram-header-link,
+    .login-header-link {
+        margin: 0 !important;
+        width: 32px !important;
+        height: 32px !important;
+    }
+    .mobile-toggle {
+        padding: 0 0 0 4px !important;
+    }
 }
