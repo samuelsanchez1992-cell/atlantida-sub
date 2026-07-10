@@ -519,6 +519,9 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
+        const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:8000'
+            : 'https://atlantida-backend-1.onrender.com';
         let datosGlobales = null;
 
         // Tabs Logic
@@ -659,7 +662,7 @@
                 const sessionId = localStorage.getItem('session_id') || '';
                 
                 // 1. Cargar Perfil Básico
-                const resPerfil = await fetch('http://localhost:8000/api/perfil/', {
+                const resPerfil = await fetch(`${API_BASE_URL}/api/perfil/`, {
                     method: 'GET',
                     headers: { 
                         'Content-Type': 'application/json',
@@ -686,7 +689,7 @@
                 }
 
                 // 2. Cargar Historial y Estadísticas
-                const resHistorial = await fetch('http://localhost:8000/api/historial/', {
+                const resHistorial = await fetch(`${API_BASE_URL}/api/historial/`, {
                     method: 'GET',
                     headers: { 
                         'Content-Type': 'application/json',
@@ -768,7 +771,7 @@
         document.getElementById('btnLogout').addEventListener('click', async () => {
             try {
                 const sessionId = localStorage.getItem('session_id') || '';
-                await fetch('http://localhost:8000/api/logout/', {
+                await fetch(`${API_BASE_URL}/api/logout/`, {
                     method: 'POST',
                     headers: { 'X-Session-Id': sessionId },
                     credentials: 'include'
