@@ -396,6 +396,10 @@
                         <div class="data-label" style="color: var(--color-blue);"><i data-lucide="award" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"></i> Titulación de Buceo</div>
                         <div class="data-value" id="data-titulacion" style="font-size: 1.3rem;">-</div>
                     </div>
+                    <div class="data-item" style="grid-column: 1 / -1; background: rgba(255, 255, 255, 0.02); border-color: rgba(255,255,255,0.05);">
+                        <div class="data-label" style="color: var(--color-orange);"><i data-lucide="shield" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"></i> Seguro de Buceo Obligatorio</div>
+                        <div class="data-value" id="data-seguro" style="margin-top: 5px;">-</div>
+                    </div>
                 </div>
                 
                 <div style="text-align: center; margin-top: 20px;">
@@ -684,6 +688,22 @@
                     document.getElementById('data-telefono').textContent = socio.telefono || '-';
                     document.getElementById('data-email').textContent = socio.email || '-';
                     document.getElementById('data-titulacion').textContent = socio.titulacion || '-';
+                    
+                    // Render Seguro
+                    const seguroDiv = document.getElementById('data-seguro');
+                    if (socio.seguro) {
+                        const s = socio.seguro;
+                        if (s.estado === 'vigente') {
+                            seguroDiv.innerHTML = `<span style="background: rgba(46, 204, 113, 0.2); border: 1px solid rgba(46, 204, 113, 0.5); color: #2ecc71; padding: 4px 10px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; display: inline-block;">🟢 Vigente (Hasta ${s.fecha_fin})</span>`;
+                        } else if (s.estado === 'proximo') {
+                            seguroDiv.innerHTML = `<span style="background: rgba(230, 126, 34, 0.2); border: 1px solid rgba(230, 126, 34, 0.5); color: #e67e22; padding: 4px 10px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; display: inline-block;">⚠️ Caduca pronto (Vence ${s.fecha_fin})</span>`;
+                        } else {
+                            seguroDiv.innerHTML = `<span style="background: rgba(231, 76, 60, 0.2); border: 1px solid rgba(231, 76, 60, 0.5); color: #e74c3c; padding: 4px 10px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; display: inline-block;">🔴 Caducado (Venció ${s.fecha_fin})</span>`;
+                        }
+                    } else {
+                        seguroDiv.innerHTML = `<span style="background: rgba(231, 76, 60, 0.2); border: 1px solid rgba(231, 76, 60, 0.5); color: #e74c3c; padding: 4px 10px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; display: inline-block;">🔴 Sin seguro registrado</span>`;
+                    }
+
                     if (socio.nitrox) document.getElementById('data-nitrox').innerHTML = '<span class="badge-nitrox">Certificación NITROX Activa</span>';
                     if (!socio.activo) document.getElementById('data-status').innerHTML = '<span class="badge-inactive">Baja</span>';
                 }
