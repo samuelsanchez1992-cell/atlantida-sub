@@ -214,13 +214,84 @@
         </div>
     </section>
 
-    <!-- El Club Section (Empty for now) -->
-    <section class="club-section" id="club" style="min-height: 50vh; display: flex; align-items: center; justify-content: center; background: var(--bg-primary);">
-        <div class="container text-center">
-            <h2 class="section-title">El Club</h2>
-            <p style="color: var(--color-gray-light); max-width: 600px; margin: 0 auto;">Contenido de las instalaciones y detalles del club (próximamente).</p>
+    <!-- El Club Section — Pantalla Completa: Entrada de Fondo Hero + 3 Zonas en la parte Superior -->
+    <section class="club-fullscreen-section" id="club">
+        <!-- Fullscreen Background Image & Dark Overlay -->
+        <div class="club-fullscreen-bg">
+            <img src="assets/club/entrada.png" alt="Entrada Atlántida Sub" class="fullscreen-bg-img">
+            <div class="fullscreen-dark-overlay"></div>
+        </div>
+
+        <div class="container club-fullscreen-content">
+            
+            <!-- PARTE SUPERIOR: Tag + Descripción de Instalaciones -->
+            <div class="club-top-desc-wrapper reveal">
+                <span class="section-tag center-tag">Instalaciones Atlántida Sub</span>
+                <p class="club-hero-desc">
+                    Ubicados en el centro de <strong>Santa Cruz de Tenerife</strong>, disponemos de <strong>zona de reuniones</strong>, <strong>estación de carga de aire y Nitrox</strong>, <strong>almacén de equipos y botellas</strong> y <strong>zona de endulzado</strong>.
+                </p>
+            </div>
+
+            <!-- PARTE INFERIOR: 3 Zonas (Sala de Reuniones, Zona de Carga, Almacén de Equipos) -->
+            <div class="club-top-trio-wrapper reveal">
+                <div class="club-trio-grid top-trio-grid">
+                    
+                    <!-- Zone 1: Sala de Reuniones -->
+                    <div class="club-trio-card" data-zone-target="reunion">
+                        <div class="trio-thumb-wrap">
+                            <img src="assets/club/reunion.png" alt="Sala de Reuniones" class="trio-thumb-img">
+                        </div>
+                        <div class="trio-card-info">
+                            <h3 class="trio-card-title">Sala de Reuniones</h3>
+                            <span class="trio-photos-badge"><i data-lucide="image"></i> 1 foto</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 2: Zona de Carga -->
+                    <div class="club-trio-card" data-zone-target="carga">
+                        <div class="trio-thumb-wrap">
+                            <img src="assets/club/carga.jpg" alt="Zona de Carga" class="trio-thumb-img">
+                        </div>
+                        <div class="trio-card-info">
+                            <h3 class="trio-card-title">Zona de Carga</h3>
+                            <span class="trio-photos-badge"><i data-lucide="image"></i> 5 fotos</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 3: Almacén de Equipos -->
+                    <div class="club-trio-card" data-zone-target="equipos">
+                        <div class="trio-thumb-wrap">
+                            <img src="assets/club/equipos.png" alt="Almacén de Equipos" class="trio-thumb-img">
+                        </div>
+                        <div class="trio-card-info">
+                            <h3 class="trio-card-title">Almacén de Equipos</h3>
+                            <span class="trio-photos-badge"><i data-lucide="image"></i> 6 fotos</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
+
+    <!-- Zone Detail Slider Lightbox Modal Container -->
+    <div class="club-zone-modal" id="club-zone-modal">
+        <div class="modal-backdrop-area"></div>
+        <div class="modal-dialog glass-panel slider-modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-zone-title" id="modal-zone-title">Galería</h3>
+                <button class="modal-close-btn" id="close-club-modal" aria-label="Cerrar ventana">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body slider-modal-body">
+                <div class="modal-gallery-container" id="modal-zone-gallery">
+                    <!-- Dynamic Slider Lightbox Rendered by app.js -->
+                </div>
+            </div>
+        </div>
+    </div>
  
     <!-- Familia Atlántida Section — Redesigned two-col layout -->
     <section class="about-section" id="about">
@@ -306,23 +377,8 @@
                     <!-- Tab 1: Actividades -->
                     <div class="tab-content active" id="tab-actividades">
                         <div class="tab-grid">
-                            <div class="tab-illustration">
-                                <!-- SVG Illustration for Actividades -->
-                                <svg viewBox="0 0 200 200" class="illustration-svg">
-                                    <defs>
-                                        <linearGradient id="seaGrad" x1="0%" y1="100%" x2="0%" y2="0%">
-                                            <stop offset="0%" stop-color="#060e1d" />
-                                            <stop offset="100%" stop-color="#0c5ca6" />
-                                        </linearGradient>
-                                    </defs>
-                                    <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
-                                    <!-- Sea Waves -->
-                                    <path d="M 30,120 Q 65,100 100,120 T 170,120 L 170,160 L 30,160 Z" fill="url(#seaGrad)"/>
-                                    <!-- Boat -->
-                                    <path d="M 60,110 L 140,110 L 130,125 L 70,125 Z" fill="#f27a18" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
-                                    <line x1="100" y1="110" x2="100" y2="85" stroke="#94a3b8" stroke-width="3"/>
-                                    <polygon points="100,85 125,95 100,105" fill="rgba(255,255,255,0.8)"/>
-                                </svg>
+                            <div class="tab-illustration has-image">
+                                <img src="assets/club/actividades1.jpeg" alt="Actividades del Club" class="tab-illustration-img">
                             </div>
                             <div class="tab-text">
                                 <h3>Actividades del Club</h3>
@@ -360,23 +416,8 @@
                             <!-- Sub-tab 1: Cursos de Buceo -->
                             <div class="subtab-content active" id="subtab-cursos">
                                 <div class="tab-grid">
-                                    <div class="tab-illustration">
-                                        <!-- SVG Illustration for Formación -->
-                                        <svg viewBox="0 0 200 200" class="illustration-svg">
-                                            <defs>
-                                                <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                    <stop offset="0%" stop-color="#38bdf8" />
-                                                    <stop offset="100%" stop-color="#0c5ca6" />
-                                                </linearGradient>
-                                            </defs>
-                                            <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
-                                            <!-- Badge Shield -->
-                                            <path d="M 70,55 L 130,55 L 130,100 C 130,125 100,145 100,145 C 100,145 70,125 70,100 Z" fill="url(#badgeGrad)" stroke="rgba(255,255,255,0.3)" stroke-width="2.5"/>
-                                            <!-- Star -->
-                                            <polygon points="100,70 105,82 118,82 108,90 112,103 100,95 88,103 92,90 82,82 95,82" fill="#f27a18"/>
-                                            <!-- Graduation line / ribbon -->
-                                            <path d="M 60,110 L 140,110" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
-                                        </svg>
+                                    <div class="tab-illustration has-image">
+                                        <img src="assets/club/entrada.png" alt="Cursos de Buceo" class="tab-illustration-img">
                                     </div>
                                     <div class="tab-text">
                                         <h3>Cursos de Buceo</h3>

@@ -381,8 +381,12 @@
                         <div class="data-value" id="data-nombre">-</div>
                     </div>
                     <div class="data-item">
-                        <div class="data-label"><i data-lucide="hash" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"></i> Número de Socio</div>
+                        <div class="data-label"><i data-lucide="hash" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"></i> ID Socio</div>
                         <div class="data-value" id="data-idsocio">-</div>
+                    </div>
+                    <div class="data-item">
+                        <div class="data-label"><i data-lucide="hash" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"></i> ID Bono</div>
+                        <div class="data-value" id="data-idbono">-</div>
                     </div>
                     <div class="data-item">
                         <div class="data-label"><i data-lucide="phone" style="width: 14px; height: 14px; margin-right: 4px; vertical-align: middle;"></i> Teléfono</div>
@@ -684,7 +688,8 @@
                 if (resPerfil.ok && dataPerfil.success) {
                     const socio = dataPerfil.socio;
                     document.getElementById('data-nombre').textContent = socio.nombre_completo || '-';
-                    document.getElementById('data-idsocio').textContent = socio.id_socio || '-';
+                    document.getElementById('data-idsocio').textContent = socio.id || '-';
+                    document.getElementById('data-idbono').textContent = socio.id_bono || '-';
                     document.getElementById('data-telefono').textContent = socio.telefono || '-';
                     document.getElementById('data-email').textContent = socio.email || '-';
                     document.getElementById('data-titulacion').textContent = socio.titulacion || '-';
